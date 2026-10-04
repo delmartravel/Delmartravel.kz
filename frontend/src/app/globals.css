@@ -1,0 +1,336 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "../styles/tokens.css";
+@import "../styles/motion.css";
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-brand-ink: var(--brand-ink);
+  --color-brand-green: var(--brand-green);
+  --color-brand-gold: var(--brand-gold);
+  --color-brand-aqua: var(--brand-aqua);
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-playfair);
+  --font-mono: var(--font-geist-mono);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+  --animate-rippling: rippling var(--duration) ease-out;
+  @keyframes rippling {
+  0% {
+    opacity: 1;
+    }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+    }
+  }
+  --color-brand: var(--brand, oklch(0.72 0.2 352.53));
+  --color-brand-light: var(--brand-light, oklch(0.78 0.15 352.53));
+  --color-brand-lighter: var(--brand-lighter, oklch(0.85 0.1 352.53));
+  --color-brand-secondary: var(--brand-secondary, oklch(0.66 0.21 354.31));
+  --color-amber: var(--amber);
+  --color-amber-fg: var(--amber-fg);
+  --color-amber-hover: var(--amber-hover);
+  --color-blue: var(--blue);
+  --color-blue-fg: var(--blue-fg);
+  --color-blue-hover: var(--blue-hover);
+  --color-green: var(--green);
+  --color-green-fg: var(--green-fg);
+  --color-green-hover: var(--green-hover);
+  --color-smooth-50: var(--smooth-50);
+  --color-smooth-100: var(--smooth-100);
+  --color-smooth-200: var(--smooth-200);
+  --color-smooth-300: var(--smooth-300);
+  --color-smooth-400: var(--smooth-400);
+  --color-smooth-500: var(--smooth-500);
+  --color-smooth-600: var(--smooth-600);
+  --color-smooth-700: var(--smooth-700);
+  --color-smooth-800: var(--smooth-800);
+  --color-smooth-900: var(--smooth-900);
+  --color-smooth-950: var(--smooth-950);
+  --color-smooth-1000: var(--smooth-1000)
+;
+  --animate-marquee: marquee var(--duration) infinite linear;
+  --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
+  @keyframes marquee {
+  from {
+    transform: translateX(0);}
+  to {
+    transform: translateX(calc(-100% - var(--gap)));}}
+  @keyframes marquee-vertical {
+  from {
+    transform: translateY(0);}
+  to {
+    transform: translateY(calc(-100% - var(--gap)));}}}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    @apply bg-background font-sans text-foreground;
+  }
+
+  body {
+    @apply min-h-svh bg-background text-foreground antialiased;
+  }
+
+  button,
+  a,
+  input,
+  select,
+  textarea {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+.delmar-ripple-host {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.delmar-global-ripple {
+  position: absolute;
+  z-index: 20;
+  border-radius: 999px;
+  pointer-events: none;
+  background: var(--delmar-ripple-color, rgba(255, 255, 255, .46));
+  transform: scale(.02);
+  opacity: 1;
+  animation: delmar-global-ripple 720ms cubic-bezier(.2, .72, .25, 1) forwards;
+}
+
+@keyframes delmar-global-ripple {
+  to {
+    transform: scale(2.35);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .delmar-global-ripple {
+    display: none;
+  }
+}
+
+html,
+body,
+.country-page-body,
+.search-page-body,
+.travel-moods,
+.why-us,
+.process-section,
+.reviews-section,
+.search-page,
+.country-page {
+  transition: background-color 300ms ease, color 300ms ease;
+}
+
+html:not(.dark) body,
+html:not(.dark) .country-page-body,
+html:not(.dark) .search-page-body {
+  background: #eef1ed;
+}
+
+html:not(.dark) .travel-moods {
+  background:
+    linear-gradient(128deg, rgba(229, 234, 229, .96) 0%, rgba(240, 243, 239, .98) 48%, rgba(226, 235, 232, .94) 100%),
+    #e9eeea;
+}
+
+html:not(.dark) .travel-moods::before {
+  opacity: .38;
+}
+
+html:not(.dark) .travel-moods::after {
+  opacity: .14;
+}
+
+html:not(.dark) .why-us,
+html:not(.dark) .process-section,
+html:not(.dark) .reviews-section {
+  background: #eef1ed;
+}
+
+.dark body,
+.dark .country-page-body,
+.dark .search-page-body {
+  background: #061220;
+  color: #f4f7f6;
+}
+
+.dark .travel-moods {
+  background: linear-gradient(145deg, #081722 0%, #0b1e2b 52%, #09242a 100%);
+}
+
+.dark .travel-moods::before {
+  opacity: .18;
+}
+
+.dark .directions-scene__eyebrow,
+.dark .directions-scene__heading > span,
+.dark .directions-stack__identity span {
+  color: rgba(244, 247, 246, .54) !important;
+}
+
+.dark .directions-scene__heading {
+  border-color: rgba(255, 255, 255, .12) !important;
+}
+
+.dark .directions-scene__heading h2,
+.dark .directions-stack__identity strong {
+  color: #f4f7f6 !important;
+}
+
+.dark .directions-stack__actions .directions-stack__arrow {
+  border-color: rgba(255, 255, 255, .18);
+  background: rgba(255, 255, 255, .07);
+  color: #f4f7f6;
+}
+
+.dark .why-us,
+.dark .process-section,
+.dark .reviews-section {
+  background: #081722;
+  color: #f4f7f6;
+}
+
+.dark .why-left h2,
+.dark .section-head h2,
+.dark .country-page h1,
+.dark .country-page h2,
+.dark .country-page h3,
+.dark .search-page h1,
+.dark .search-page h2,
+.dark .search-page h3 {
+  color: #f4f7f6;
+}
+
+.dark .why-left > p:not(.section-label),
+.dark .section-head > p:not(.section-label),
+.dark .country-page p,
+.dark .search-page p {
+  color: rgba(232, 239, 237, .7);
+}
+
+.dark .why-card,
+.dark .country-page article,
+.dark .country-page [class*="card"],
+.dark .tour-search-form,
+.dark .tour-search-field,
+.dark .tour-search-panel,
+.dark .tour-search-list,
+.dark .search-results,
+.dark .search-results__toolbar,
+.dark .hotel-result-card {
+  border-color: rgba(255, 255, 255, .12) !important;
+  background-color: #0c1b29 !important;
+  color: #f4f7f6;
+}
+
+.dark .tour-search-form input,
+.dark .tour-search-form select,
+.dark .tour-search-form button:not(.tour-search-submit),
+.dark .tour-search-form [role="button"] {
+  border-color: rgba(255, 255, 255, .13);
+  color: #f4f7f6;
+}
+
+.dark .tour-search-form input::placeholder {
+  color: rgba(232, 239, 237, .5);
+}
+
+.dark .country-page-body .delmar-header--surface .header-glass,
+.dark .search-page-body .delmar-header--surface .header-glass {
+  background: rgba(3, 16, 27, .92);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html,
+  body,
+  .country-page-body,
+  .search-page-body,
+  .travel-moods,
+  .why-us,
+  .process-section,
+  .reviews-section {
+    transition: none;
+  }
+}
+
+:root {
+  --amber: oklch(0.77 0.16 75);
+  --amber-fg: oklch(0.22 0 0);
+  --amber-hover: oklch(0.71 0.17 70);
+  --blue: oklch(0.62 0.19 256);
+  --blue-fg: #fff;
+  --blue-hover: oklch(0.56 0.2 256);
+  --green: oklch(0.7 0.17 152);
+  --green-fg: #fff;
+  --green-hover: oklch(0.64 0.18 152);
+  --smooth-50: oklch(0.99 0 0);
+  --smooth-100: oklch(0.972 0 0);
+  --smooth-200: oklch(0.945 0 0);
+  --smooth-300: oklch(0.91 0 0);
+  --smooth-400: oklch(0.865 0 0);
+  --smooth-500: oklch(0.81 0 0);
+  --smooth-600: oklch(0.74 0 0);
+  --smooth-700: oklch(0.66 0 0);
+  --smooth-800: oklch(0.56 0 0);
+  --smooth-900: oklch(0.47 0 0);
+  --smooth-950: oklch(0.36 0 0);
+  --smooth-1000: oklch(0.22 0 0);
+}
+
+.dark {
+  --amber: oklch(0.8 0.15 75);
+  --amber-fg: oklch(0.2 0 0);
+  --amber-hover: oklch(0.85 0.14 72);
+  --blue: oklch(0.66 0.18 256);
+  --blue-fg: #fff;
+  --blue-hover: oklch(0.72 0.16 256);
+  --green: oklch(0.73 0.16 152);
+  --green-fg: oklch(0.2 0 0);
+  --green-hover: oklch(0.79 0.15 152);
+  --smooth-50: oklch(0.2 0 0);
+  --smooth-100: oklch(0.235 0 0);
+  --smooth-200: oklch(0.275 0 0);
+  --smooth-300: oklch(0.315 0 0);
+  --smooth-400: oklch(0.36 0 0);
+  --smooth-500: oklch(0.41 0 0);
+  --smooth-600: oklch(0.47 0 0);
+  --smooth-700: oklch(0.55 0 0);
+  --smooth-800: oklch(0.66 0 0);
+  --smooth-900: oklch(0.74 0 0);
+  --smooth-950: oklch(0.85 0 0);
+  --smooth-1000: oklch(0.96 0 0);
+}
+  ::view-transition-old(root), ::view-transition-new(root) {
+    animation: none;
+    mix-blend-mode: normal;}

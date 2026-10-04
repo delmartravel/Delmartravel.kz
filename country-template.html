@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob:; media-src 'self'; connect-src 'self'; form-action 'self'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="description" content="Универсальный шаблон экспертной страницы страны Del Mar Travel" />
+  <title>Страна | Del Mar Travel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="country-page-body">
+  <header class="header">
+    <div class="logo-orb"><img src="assets/logos/logo.jpg" alt="Del Mar Travel"></div>
+
+    <div class="header-glass">
+      <div class="logo"><span class="logo-white">Del Mar</span>
+        <span class="logo-white">Travel</span></div>
+
+      <nav class="menu" aria-label="Навигация">
+        <a href="./index.html">Главная</a>
+        <a href="./index.html#formats">Форматы</a>
+        <a href="./index.html#why-us">Почему мы</a>
+        <a href="./index.html#destinations">Направления</a>
+        <a href="./pages/search/index.html">Поиск тура</a>
+        <a href="./index.html#contacts">Контакты</a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="lang-switch">
+          <a href="#" class="active">RU</a>
+          <a href="#">KZ</a>
+          <a href="#">EN</a>
+        </div>
+
+        <a href="https://wa.me/77770316653" target="_blank" class="header-button" rel="noopener noreferrer">
+          <svg class="wa-svg" viewBox="0 0 32 32" aria-hidden="true">
+            <path fill="currentColor" d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.8 2 6.8L3.7 29l6.6-1.7c1.8 1 3.8 1.5 5.9 1.5 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.6c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.9 1 1-3.8-.2-.4c-1-1.7-1.5-3.7-1.5-5.7C6 10.2 10.5 5.7 16 5.7s10 4.5 10 10-4.5 10.9-10 10.9z"/>
+          </svg>
+          WhatsApp
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="country-page">
+    <section class="country-hero">
+      <img src="./assets/images/directions/turkey.jpg" alt="Фотография страны">
+      <div class="country-hero__content">
+        <p class="section-label">Экспертный гид</p>
+        <h1>Название страны</h1>
+        <p>Краткое описание направления: настроение отдыха, основные регионы и формат путешествия, который будет раскрыт на этой странице.</p>
+      </div>
+    </section>
+
+    <section class="country-section country-intro">
+      <div class="country-section__head">
+        <p class="section-label">Кратко о стране</p>
+        <h2>Что важно понять перед выбором региона</h2>
+      </div>
+      <div class="country-text-block">
+        <p>Здесь будет большой экспертный текст о стране: расположение, особенности отдыха, климат, моря, сезонность и причины, по которым туристы выбирают это направление.</p>
+        <p>Блок рассчитан на полноценное описание без рекламных обещаний. Текст можно расширять, сохраняя спокойный ритм чтения и удобную ширину строки.</p>
+      </div>
+    </section>
+
+    <section class="country-section country-resorts">
+      <div class="country-section__head">
+        <p class="section-label">Курорты страны</p>
+        <h2>Основные регионы для отдыха</h2>
+        <p>В этом разделе будут подробные описания курортов, чтобы турист мог сравнить атмосферу, пляжи, инфраструктуру и тип отдыха до выбора отеля.</p>
+      </div>
+
+      <div class="country-resort-list">
+        <article class="country-resort">
+          <img src="./assets/images/directions/uae.jpg" alt="Фотография курорта">
+          <div>
+            <span>Курорт 01</span>
+            <h3>Название курорта</h3>
+            <p>Здесь будет большой текст о курорте: кому он подходит, какая атмосфера, какие пляжи, какие отели чаще выбирают и какие нюансы стоит учитывать.</p>
+          </div>
+        </article>
+
+        <article class="country-resort country-resort--reverse">
+          <img src="./assets/images/directions/maldives.jpg" alt="Фотография курорта">
+          <div>
+            <span>Курорт 02</span>
+            <h3>Название курорта</h3>
+            <p>Этот блок повторяет ту же структуру. В него можно добавить подробное описание региона, особенности дороги, пляжей, инфраструктуры и сценариев отдыха.</p>
+          </div>
+        </article>
+
+        <article class="country-resort">
+          <img src="./assets/images/directions/thailand.jpg" alt="Фотография курорта">
+          <div>
+            <span>Курорт 03</span>
+            <h3>Название курорта</h3>
+            <p>Здесь будет описание ещё одного курорта. Формат рассчитан на большие тексты, но визуально остаётся лёгким за счёт фотографии, воздуха и спокойной типографики.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="country-section country-guide-panel">
+      <div class="country-section__head">
+        <p class="section-label">Как выбрать курорт</p>
+        <h2>Под разные сценарии отдыха подходят разные регионы</h2>
+      </div>
+      <div class="country-text-block">
+        <p>Здесь будет единый информационный блок с рекомендациями: где комфортнее отдыхать с детьми, где спокойнее, где больше движения, где лучше премиальные отели, экскурсии или песчаные пляжи.</p>
+        <p>Раздел не оформлен как список преимуществ. Он должен помогать туристу принять решение и понять логику выбора региона.</p>
+      </div>
+    </section>
+
+    <section class="country-section country-season">
+      <div class="country-section__head">
+        <p class="section-label">Когда лучше ехать</p>
+        <h2>Сезонность и комфорт поездки</h2>
+      </div>
+      <div class="country-text-block">
+        <p>Здесь будет рассказ о сезонах, погоде, море, температуре воздуха, периодах высокого спроса и месяцах, когда направление особенно комфортно для разных форматов отдыха.</p>
+      </div>
+    </section>
+
+    <section class="country-section country-sights">
+      <div class="country-section__head">
+        <p class="section-label">Что посмотреть</p>
+        <h2>Места, которые стоит включить в маршрут</h2>
+      </div>
+      <div class="country-sight-grid">
+        <article class="country-sight-card">
+          <img src="./assets/images/directions/china.jpg" alt="Фотография достопримечательности">
+          <div>
+            <h3>Достопримечательность</h3>
+            <p>Здесь будет короткое описание места и пояснение, кому оно может быть интересно.</p>
+          </div>
+        </article>
+        <article class="country-sight-card">
+          <img src="./assets/images/directions/georgia.jpg" alt="Фотография достопримечательности">
+          <div>
+            <h3>Достопримечательность</h3>
+            <p>Карточка рассчитана на лаконичный текст, без перегруза и энциклопедического формата.</p>
+          </div>
+        </article>
+        <article class="country-sight-card">
+          <img src="./assets/images/directions/qatar.jpg" alt="Фотография достопримечательности">
+          <div>
+            <h3>Достопримечательность</h3>
+            <p>При добавлении контента карточки сохранят единую высоту и аккуратное визуальное оформление.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="country-section country-need-to-know">
+      <div class="country-section__head">
+        <p class="section-label">Что важно знать перед поездкой</p>
+        <h2>Практические детали без сухих таблиц</h2>
+      </div>
+      <div class="country-knowledge-list">
+        <article><span>Валюта</span><p>Здесь будет информация о валюте, оплате и удобных способах расчёта.</p></article>
+        <article><span>Язык</span><p>Здесь будет информация о языке общения и бытовых нюансах для туристов.</p></article>
+        <article><span>Перелёт</span><p>Здесь будет информация о перелёте, дороге до курортов и трансферах.</p></article>
+        <article><span>Связь</span><p>Здесь будет информация об интернете, мобильной связи и полезных сервисах.</p></article>
+        <article><span>Транспорт</span><p>Здесь будет информация о перемещениях внутри страны и между регионами.</p></article>
+        <article><span>Советы</span><p>Здесь будут практические рекомендации перед поездкой.</p></article>
+      </div>
+    </section>
+
+    <section class="country-hotels-cta">
+      <div>
+        <p class="section-label">Отели страны</p>
+        <h2>Перейти к подборке отелей</h2>
+        <p>После наполнения страницы здесь будет переход к отелям выбранной страны с фильтрацией по регионам и формату отдыха.</p>
+      </div>
+      <a href="#" class="button button-light">Посмотреть отели</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <h3>Del Mar Travel</h3>
+        <p>Премиальный подбор путешествий, отелей и индивидуальных маршрутов по всему миру.</p>
+        <div class="footer-socials">
+          <a href="https://www.instagram.com/delmar_kz" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="https://www.tiktok.com/@delmar_kz" target="_blank" rel="noopener noreferrer">TikTok</a>
+          <a href="https://t.me/+77077186699" target="_blank" rel="noopener noreferrer">Telegram</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Связь</h4>
+        <a href="https://wa.me/77770316653" target="_blank" rel="noopener noreferrer">WhatsApp: +7 777 031 66 53</a>
+        <a href="tel:+77770316653">+7 777 031 66 53</a>
+        <a href="tel:+77077186699">+7 707 718 66 99</a>
+        <a href="tel:+77715610980">+7 771 561 09 80</a>
+        <a href="mailto:delmartravel888@gmail.com">delmartravel888@gmail.com</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Соцсети</h4>
+        <a href="https://www.instagram.com/delmar_kz" target="_blank" rel="noopener noreferrer">Instagram: delmar_kz</a>
+        <a href="https://www.tiktok.com/@delmar_kz" target="_blank" rel="noopener noreferrer">TikTok: delmar_kz</a>
+        <a href="https://t.me/+77077186699" target="_blank" rel="noopener noreferrer">Telegram: +7 707 718 66 99</a>
+      </div>
+
+      <div class="footer-col footer-requisites">
+        <h4>Реквизиты</h4>
+        <p>ТОО «DEL MAR TRAVEL»</p>
+        <p>БИН: 220740028941</p>
+        <p>АО «Kaspi Bank»</p>
+        <p>ИИК: KZ43722S000018027876 KZT</p>
+        <p>БИК: CASPKZKA</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>РК, Астана, проспект Кабанбай Батыра, д.13, ВП 28</p>
+      <p>© Del Mar Travel</p>
+    </div>
+  </footer>
+</body>
+</html>

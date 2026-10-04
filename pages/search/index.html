@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob:; media-src 'self'; connect-src 'self'; form-action 'self'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="description" content="Поиск тура | Del Mar Travel" />
+  <title>Поиск тура | Del Mar Travel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="stylesheet" href="./search.css?v=hotel-component-audit-2" />
+</head>
+<body class="search-page-body">
+  <header class="header">
+    <div class="logo-orb"><img src="../../assets/logos/logo.jpg" alt="Del Mar Travel"></div>
+
+    <div class="header-glass">
+      <div class="logo"><span class="logo-white">Del Mar</span>
+        <span class="logo-white">Travel</span></div>
+
+      <nav class="menu" aria-label="Навигация">
+        <a href="../../index.html">Главная</a>
+        <a href="../../index.html#formats">Форматы</a>
+        <a href="../../index.html#why-us">Почему мы</a>
+        <div class="menu-destinations">
+          <a href="../../index.html#formats" class="menu-destinations__toggle">Направления</a>
+          <div class="menu-destinations__list" aria-label="Страны">
+            <a href="../turkey/index.html">Турция</a>
+            <a href="../egypt/index.html">Египет</a>
+            <a href="../uae/index.html">ОАЭ</a>
+            <a href="../maldives/index.html">Мальдивы</a>
+            <a href="../thailand/index.html">Таиланд</a>
+            <a href="../vietnam/index.html">Вьетнам</a>
+            <a href="../sri-lanka/index.html">Шри-Ланка</a>
+            <a href="../qatar/index.html">Катар</a>
+            <a href="../china/index.html">Китай</a>
+            <a href="../georgia/index.html">Грузия</a>
+          </div>
+        </div>
+        <a href="./index.html" aria-current="page">Поиск тура</a>
+        <a href="../../index.html#contacts">Контакты</a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="lang-switch">
+          <a href="#" class="active">RU</a>
+          <a href="#">KZ</a>
+          <a href="#">EN</a>
+        </div>
+
+        <a href="https://wa.me/77770316653" target="_blank" class="header-button" rel="noopener noreferrer">
+          <svg class="wa-svg" viewBox="0 0 32 32" aria-hidden="true">
+            <path fill="currentColor" d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.8 2 6.8L3.7 29l6.6-1.7c1.8 1 3.8 1.5 5.9 1.5 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.6c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.9 1 1-3.8-.2-.4c-1-1.7-1.5-3.7-1.5-5.7C6 10.2 10.5 5.7 16 5.7s10 4.5 10 10-4.5 10.9-10 10.9z"/>
+          </svg>
+          WhatsApp
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="search-page">
+    <section class="search-intro">
+      <div class="search-intro__copy">
+        <h1>Поиск тура</h1>
+      </div>
+
+      <form class="tour-search-form" aria-label="Параметры поиска тура">
+        <fieldset class="tour-search-mode">
+          <legend class="tour-search-visually-hidden">Тип поиска</legend>
+          <label class="tour-search-mode__option">
+            <input type="radio" name="search-type">
+            <span>Туры с перелётом</span>
+          </label>
+          <label class="tour-search-mode__option">
+            <input type="radio" name="search-type">
+            <span>Отели</span>
+          </label>
+        </fieldset>
+
+        <div class="tour-search-primary">
+          <div class="tour-search-field tour-search-control tour-search-control--departure" data-tour-search-control="departure-city">
+            <span>Город вылета</span>
+            <button class="tour-search-trigger" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="tour-search-departure-city-panel" data-tour-search-trigger="departure-city">Город вылета</button>
+            <div class="tour-search-popover tour-search-departure-city" id="tour-search-departure-city-panel" role="dialog" aria-modal="false" aria-label="Выбор города вылета" hidden>
+              <div class="tour-search-departure-city__tabs" role="tablist" aria-label="Разделы городов">
+                <button class="tour-search-departure-city__tab is-active" type="button" role="tab" aria-selected="true" aria-label="Раздел 1"></button>
+                <button class="tour-search-departure-city__tab" type="button" role="tab" aria-selected="false" aria-label="Раздел 2"></button>
+                <button class="tour-search-departure-city__tab" type="button" role="tab" aria-selected="false" aria-label="Раздел 3"></button>
+                <button class="tour-search-departure-city__tab" type="button" role="tab" aria-selected="false" aria-label="Раздел 4"></button>
+              </div>
+              <div class="tour-search-departure-city__content" role="tabpanel" aria-label="Будущий список городов" data-departure-city-list>
+                <div class="tour-search-departure-city__column" aria-hidden="true"><i></i><b></b><b></b><b class="is-highlighted"></b><b></b><b></b></div>
+                <div class="tour-search-departure-city__column" aria-hidden="true"><i></i><b></b><b></b><b></b><b class="is-highlighted"></b><b></b></div>
+                <div class="tour-search-departure-city__column" aria-hidden="true"><i></i><b></b><b class="is-highlighted"></b><b></b><b></b><b></b></div>
+                <div class="tour-search-departure-city__column" aria-hidden="true"><i></i><b></b><b></b><b></b><b class="is-highlighted"></b><b></b></div>
+              </div>
+            </div>
+          </div>
+          <label class="tour-search-field">
+            <span>Страна</span>
+            <select>
+              <option value="" selected disabled>Страна</option>
+            </select>
+          </label>
+          <div class="tour-search-field tour-search-control" data-tour-search-control="dates">
+            <span>Даты вылета</span>
+            <button class="tour-search-trigger" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="tour-search-dates-panel" data-tour-search-trigger="dates">Даты вылета</button>
+            <div class="tour-search-popover tour-search-calendar" id="tour-search-dates-panel" role="dialog" aria-modal="false" aria-label="Выбор дат вылета" hidden>
+              <div class="tour-search-popover__head">
+                <button class="tour-search-icon-btn" type="button" aria-label="Предыдущий месяц" data-calendar-prev></button>
+                <div class="tour-search-calendar__titles" aria-live="polite"></div>
+                <button class="tour-search-icon-btn" type="button" aria-label="Следующий месяц" data-calendar-next></button>
+              </div>
+              <div class="tour-search-calendar__grid" data-calendar-grid></div>
+              <div class="tour-search-popover__actions">
+                <button class="tour-search-secondary-btn" type="button" data-tour-search-close>Отмена</button>
+                <button class="tour-search-apply-btn" type="button" data-tour-search-apply="dates">Выбрать</button>
+              </div>
+            </div>
+          </div>
+          <div class="tour-search-field tour-search-control" data-tour-search-control="nights">
+            <span>Ночей</span>
+            <button class="tour-search-trigger" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="tour-search-nights-panel" data-tour-search-trigger="nights">Ночей</button>
+            <div class="tour-search-popover tour-search-nights" id="tour-search-nights-panel" role="dialog" aria-modal="false" aria-label="Выбор количества ночей" hidden>
+              <p class="tour-search-popover__title">Ночей от:</p>
+              <div class="tour-search-number-grid" data-nights-grid></div>
+              <div class="tour-search-popover__actions">
+                <button class="tour-search-secondary-btn" type="button" data-tour-search-close>Отмена</button>
+                <button class="tour-search-apply-btn" type="button" data-tour-search-apply="nights">Выбрать</button>
+              </div>
+            </div>
+          </div>
+          <div class="tour-search-field tour-search-control" data-tour-search-control="tourists">
+            <span>Туристы</span>
+            <button class="tour-search-trigger" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="tour-search-tourists-panel" data-tour-search-trigger="tourists">Туристы</button>
+            <div class="tour-search-popover tour-search-tourists" id="tour-search-tourists-panel" role="dialog" aria-modal="false" aria-label="Выбор туристов" hidden>
+              <p class="tour-search-popover__title">Туристы</p>
+              <div class="tour-search-counter">
+                <button class="tour-search-stepper" type="button" aria-label="Уменьшить количество взрослых" data-counter="adults" data-step="-1">−</button>
+                <span data-tourists-adults>Взрослые</span>
+                <button class="tour-search-stepper" type="button" aria-label="Увеличить количество взрослых" data-counter="adults" data-step="1">+</button>
+              </div>
+              <div class="tour-search-counter">
+                <button class="tour-search-stepper" type="button" aria-label="Уменьшить количество детей" data-counter="children" data-step="-1">−</button>
+                <span data-tourists-children>Дети</span>
+                <button class="tour-search-stepper" type="button" aria-label="Увеличить количество детей" data-counter="children" data-step="1">+</button>
+              </div>
+              <div class="tour-search-children-ages" data-children-ages></div>
+              <div class="tour-search-popover__actions">
+                <button class="tour-search-secondary-btn" type="button" data-tour-search-close>Отмена</button>
+                <button class="tour-search-apply-btn" type="button" data-tour-search-apply="tourists">Выбрать</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tour-search-filters">
+          <div class="tour-search-select tour-search-star-field" role="group" aria-label="Класс отеля">
+            <span>Класс отеля</span>
+            <div class="tour-search-stars" data-hotel-class-stars>
+              <button class="tour-search-star" type="button" data-hotel-class="1" aria-label="1 звезда" aria-pressed="false"><span aria-hidden="true">★</span></button>
+              <button class="tour-search-star" type="button" data-hotel-class="2" aria-label="2 звезды" aria-pressed="false"><span aria-hidden="true">★</span></button>
+              <button class="tour-search-star" type="button" data-hotel-class="3" aria-label="3 звезды" aria-pressed="false"><span aria-hidden="true">★</span></button>
+              <button class="tour-search-star" type="button" data-hotel-class="4" aria-label="4 звезды" aria-pressed="false"><span aria-hidden="true">★</span></button>
+              <button class="tour-search-star" type="button" data-hotel-class="5" aria-label="5 звезд" aria-pressed="false"><span aria-hidden="true">★</span></button>
+            </div>
+          </div>
+          <label class="tour-search-select">
+            <span>Тип отеля</span>
+            <select>
+              <option value="" selected disabled>Тип отеля</option>
+            </select>
+          </label>
+          <label class="tour-search-select">
+            <span>Питание</span>
+            <select>
+              <option value="" selected disabled>Питание</option>
+            </select>
+          </label>
+          <label class="tour-search-select">
+            <span>Рейтинг</span>
+            <select>
+              <option value="" selected disabled>Рейтинг</option>
+            </select>
+          </label>
+          <label class="tour-search-select">
+            <span>Расширенные фильтры</span>
+            <select>
+              <option value="" selected disabled>Расширенные фильтры</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="tour-search-content">
+          <fieldset class="tour-search-list">
+            <legend>Курорты</legend>
+            <div class="tour-search-list__items"></div>
+          </fieldset>
+
+          <section class="tour-search-hotels" aria-labelledby="tour-search-hotels-title">
+            <h2 id="tour-search-hotels-title" class="tour-search-visually-hidden">Отели</h2>
+            <label class="tour-search-hotel-search">
+              <span class="tour-search-visually-hidden">Отели</span>
+              <input type="search" placeholder="Отели">
+            </label>
+            <div class="tour-search-hotel-list"></div>
+          </section>
+        </div>
+
+        <div class="tour-search-bottom">
+          <div class="tour-search-select tour-search-select--budget tour-search-control" data-tour-search-control="budget">
+            <span>Бюджет</span>
+            <button class="tour-search-trigger tour-search-trigger--select" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="tour-search-budget-panel" data-tour-search-trigger="budget">Бюджет</button>
+            <div class="tour-search-popover tour-search-budget" id="tour-search-budget-panel" role="dialog" aria-modal="false" aria-label="Выбор бюджета" hidden>
+              <div class="tour-search-budget__head">
+                <p class="tour-search-popover__title">Бюджет</p>
+                <button class="tour-search-budget__clear" type="button" data-budget-clear>Очистить</button>
+              </div>
+              <div class="tour-search-budget__range">
+                <label class="tour-search-budget__input">
+                  <span>Минимальный бюджет</span>
+                  <input type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="off" data-budget-min>
+                </label>
+                <label class="tour-search-budget__input">
+                  <span>Максимальный бюджет</span>
+                  <input type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="off" data-budget-max>
+                </label>
+              </div>
+              <fieldset class="tour-search-budget__currency">
+                <legend>Валюта</legend>
+                <label class="tour-search-budget__radio"><input type="radio" name="budget-currency" value="option-1" aria-label="Временный вариант 1"><span aria-hidden="true"></span><i aria-hidden="true"></i></label>
+                <label class="tour-search-budget__radio"><input type="radio" name="budget-currency" value="option-2" aria-label="Временный вариант 2"><span aria-hidden="true"></span><i aria-hidden="true"></i></label>
+                <label class="tour-search-budget__radio"><input type="radio" name="budget-currency" value="option-3" aria-label="Временный вариант 3"><span aria-hidden="true"></span><i aria-hidden="true"></i></label>
+                <label class="tour-search-budget__radio"><input type="radio" name="budget-currency" value="option-4" aria-label="Временный вариант 4"><span aria-hidden="true"></span><i aria-hidden="true"></i></label>
+              </fieldset>
+              <button class="tour-search-apply-btn tour-search-budget__apply" type="button" data-tour-search-apply="budget">Применить</button>
+            </div>
+          </div>
+          <label class="tour-search-check">
+            <input type="checkbox">
+            <span>Только чартер</span>
+          </label>
+          <label class="tour-search-check">
+            <input type="checkbox">
+            <span>Гарантия мест в отеле</span>
+          </label>
+          <button class="tour-search-submit" type="button" data-tour-search-submit>Найти туры</button>
+        </div>
+      </form>
+
+      <section class="search-results-page" aria-label="Результаты поиска тура" data-search-results hidden>
+        <div class="search-results-panel" aria-label="Выбранные параметры поиска"></div>
+
+        <div class="search-results-shell">
+          <aside class="search-results-filters" aria-label="Фильтры результатов"></aside>
+
+          <div class="search-results-main">
+            <div class="search-results-sort" aria-label="Сортировка результатов">
+              <div class="search-results-sort__summary"></div>
+              <div class="search-results-sort__controls">
+                <div class="search-results-sort__select"></div>
+                <div class="search-results-sort__toggles">
+                  <div></div>
+                  <div></div>
+                </div>
+                <div class="search-results-sort__map"></div>
+                <div class="search-results-sort__edit"></div>
+              </div>
+            </div>
+            <div class="search-results-list" aria-label="Список результатов" hidden>
+              <div class="search-results-card-stack">
+                <article class="search-result-card">
+                  <div class="search-result-card__media" role="button" tabindex="0" aria-label="Открыть фотографии отеля" aria-haspopup="dialog" data-hotel-gallery-open>
+                    <div class="search-result-card__photo-mark"></div>
+                    <div class="search-result-card__photo-action"></div>
+                  </div>
+                  <div class="search-result-card__content">
+                    <div class="search-result-card__identity">
+                      <div class="search-result-card__identity-main">
+                        <div class="search-result-card__stars"></div>
+                        <div class="search-result-card__title"></div>
+                        <div class="search-result-card__location"></div>
+                      </div>
+                      <div class="search-result-card__rating"></div>
+                    </div>
+                    <div class="search-result-card__badge"></div>
+                    <div class="search-result-card__description">
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                    </div>
+                    <div class="search-result-card__actions">
+                      <button type="button">Об отеле</button>
+                      <button type="button">Отзывы</button>
+                      <button type="button">Карта</button>
+                      <button type="button" data-hotel-rooms-toggle>Номера</button>
+                      <button class="search-result-card__favorite" type="button" aria-label="Добавить в избранное"></button>
+                    </div>
+                  </div>
+                  <div class="search-result-card__details" id="search-result-hotel-details" hidden>
+                    <div class="search-result-card__details-grid">
+                      <div><span>Построен</span><div></div></div>
+                      <div><span>Реновация</span><div></div></div>
+                      <div><span>Расположен</span><div></div></div>
+                      <div><span>Площадь</span><div></div></div>
+                      <div><span>Пляж</span><div></div></div>
+                      <div><span>Территория</span><div></div></div>
+                      <div><span>Номер</span><div></div></div>
+                    </div>
+                    <div class="search-result-card__details-actions">
+                      <button type="button" data-hotel-modal-open>Подробнее</button>
+                      <button type="button" aria-haspopup="dialog" data-hotel-gallery-open>Больше фото</button>
+                    </div>
+                  </div>
+                  <section class="search-hotel-rooms search-result-card__rooms" id="search-result-hotel-rooms" data-hotel-rooms hidden aria-label="Варианты размещения">
+                    <div class="search-hotel-rooms__list" data-hotel-rooms-list></div>
+                    <template id="search-hotel-room-template">
+                      <article class="search-hotel-room" data-hotel-room>
+                        <div class="search-hotel-room__media"><i aria-hidden="true"></i></div>
+                        <div class="search-hotel-room__identity"><b></b><span></span></div>
+                        <div class="search-hotel-room__price"><b></b><span></span></div>
+                        <button class="search-hotel-room__select" type="button" aria-label="Выбрать предложение" aria-pressed="false"></button>
+                      </article>
+                    </template>
+                  </section>
+                  <div class="search-result-card__booking">
+                    <div class="search-result-card__old-price"></div>
+                    <div class="search-result-card__price">
+                      <div></div>
+                    </div>
+                    <button class="search-result-card__offer-button" type="button" aria-label="Показать предложения"></button>
+                  </div>
+                </article>
+              </div>
+            </div>
+            <div class="search-results-state search-results-state--loading" data-search-results-loading>
+              <div class="search-results-skeleton">
+                <div class="search-results-skeleton__item">
+                  <div class="search-results-skeleton__media"></div>
+                  <div class="search-results-skeleton__content">
+                    <div class="search-results-skeleton__line search-results-skeleton__line--lg"></div>
+                    <div class="search-results-skeleton__line"></div>
+                    <div class="search-results-skeleton__line search-results-skeleton__line--short"></div>
+                    <div class="search-results-skeleton__badges"><div></div><div></div><div></div></div>
+                  </div>
+                  <div class="search-results-skeleton__side">
+                    <div class="search-results-skeleton__price"></div>
+                    <div class="search-results-skeleton__button"></div>
+                    <div class="search-results-skeleton__button"></div>
+                  </div>
+                </div>
+                <div class="search-results-skeleton__item">
+                  <div class="search-results-skeleton__media"></div>
+                  <div class="search-results-skeleton__content">
+                    <div class="search-results-skeleton__line search-results-skeleton__line--lg"></div>
+                    <div class="search-results-skeleton__line"></div>
+                    <div class="search-results-skeleton__line search-results-skeleton__line--short"></div>
+                    <div class="search-results-skeleton__badges"><div></div><div></div><div></div></div>
+                  </div>
+                  <div class="search-results-skeleton__side">
+                    <div class="search-results-skeleton__price"></div>
+                    <div class="search-results-skeleton__button"></div>
+                    <div class="search-results-skeleton__button"></div>
+                  </div>
+                </div>
+                <div class="search-results-skeleton__item">
+                  <div class="search-results-skeleton__media"></div>
+                  <div class="search-results-skeleton__content">
+                    <div class="search-results-skeleton__line search-results-skeleton__line--lg"></div>
+                    <div class="search-results-skeleton__line"></div>
+                    <div class="search-results-skeleton__line search-results-skeleton__line--short"></div>
+                    <div class="search-results-skeleton__badges"><div></div><div></div><div></div></div>
+                  </div>
+                  <div class="search-results-skeleton__side">
+                    <div class="search-results-skeleton__price"></div>
+                    <div class="search-results-skeleton__button"></div>
+                    <div class="search-results-skeleton__button"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="search-results-state search-results-state--empty" hidden></div>
+            <div class="search-results-state search-results-state--error" hidden></div>
+          </div>
+        </div>
+      </section>
+    </section>
+    <div class="search-reviews-modal" data-reviews-modal hidden>
+      <div class="search-reviews-modal__overlay" data-reviews-close></div>
+      <section class="search-reviews-modal__dialog" role="dialog" aria-modal="true" aria-label="Отзывы об отеле">
+        <button class="search-reviews-modal__close" type="button" aria-label="Закрыть" data-reviews-close></button>
+        <aside class="search-reviews-modal__sidebar">
+          <div class="search-reviews-modal__rating">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+          <div class="search-reviews-modal__filters">
+            <div></div>
+            <div></div>
+          </div>
+          <div class="search-reviews-modal__mentions">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </aside>
+        <div class="search-reviews-modal__main">
+          <div class="search-reviews-modal__head">
+            <div class="search-reviews-modal__title"></div>
+            <div class="search-reviews-modal__sources">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+          <div class="search-reviews-modal__list">
+            <article class="search-reviews-modal__item">
+              <div class="search-reviews-modal__score"></div>
+              <div class="search-reviews-modal__review">
+                <div class="search-reviews-modal__review-head"></div>
+                <div></div><div></div><div></div>
+                <div class="search-reviews-modal__review-meta"></div>
+              </div>
+            </article>
+            <article class="search-reviews-modal__item">
+              <div class="search-reviews-modal__score"></div>
+              <div class="search-reviews-modal__review">
+                <div class="search-reviews-modal__review-head"></div>
+                <div></div><div></div><div></div>
+                <div class="search-reviews-modal__review-meta"></div>
+              </div>
+            </article>
+            <article class="search-reviews-modal__item">
+              <div class="search-reviews-modal__score"></div>
+              <div class="search-reviews-modal__review">
+                <div class="search-reviews-modal__review-head"></div>
+                <div></div><div></div><div></div>
+                <div class="search-reviews-modal__review-meta"></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <dialog class="search-hotel-modal" data-hotel-modal aria-label="Подробная информация об отеле" aria-describedby="search-hotel-modal-description">
+      <section class="search-hotel-modal__dialog">
+        <p class="tour-search-visually-hidden" id="search-hotel-modal-description">Информация о выбранном отеле и параметрах тура</p>
+
+        <div class="search-hotel-modal__topbar">
+          <div class="search-hotel-modal__utilities" aria-hidden="true">
+            <span class="search-hotel-modal__utility search-hotel-modal__utility--more"></span>
+            <span class="search-hotel-modal__utility search-hotel-modal__utility--share"></span>
+          </div>
+          <div class="search-hotel-modal__brand-mark" aria-hidden="true"></div>
+          <button class="search-hotel-modal__close" type="button" aria-label="Закрыть" data-hotel-modal-close></button>
+        </div>
+
+        <header class="search-hotel-modal__header">
+          <div class="search-hotel-modal__identity" aria-hidden="true">
+            <div class="search-hotel-modal__stars"><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="search-hotel-modal__hotel-name"></div>
+            <div class="search-hotel-modal__hotel-location"></div>
+          </div>
+
+          <div class="search-hotel-modal__tour-card" aria-hidden="true">
+            <div class="search-hotel-modal__tour-facts">
+              <div class="search-hotel-modal__fact-column">
+                <div class="search-hotel-modal__fact"><i></i><span></span></div>
+                <div class="search-hotel-modal__fact"><i></i><span></span></div>
+                <div class="search-hotel-modal__fact"><i></i><span></span></div>
+              </div>
+              <div class="search-hotel-modal__fact-column">
+                <div class="search-hotel-modal__fact search-hotel-modal__fact--wide"><i></i><span></span></div>
+                <div class="search-hotel-modal__fact"><i></i><span></span></div>
+              </div>
+            </div>
+            <aside class="search-hotel-modal__price-panel">
+              <div class="search-hotel-modal__price-head"><div></div><i></i></div>
+              <div class="search-hotel-modal__price-note"></div>
+              <div class="search-hotel-modal__price-action"></div>
+              <div class="search-hotel-modal__price-action search-hotel-modal__price-action--accent"></div>
+            </aside>
+          </div>
+        </header>
+
+        <nav class="search-hotel-modal__tabs" aria-label="Разделы информации об отеле" role="tablist">
+          <button class="is-active" id="search-hotel-tab-hotel" type="button" role="tab" aria-selected="true" aria-controls="search-hotel-panel-hotel" tabindex="0" data-hotel-modal-tab="hotel">Отель</button>
+          <button id="search-hotel-tab-photo" type="button" role="tab" aria-selected="false" aria-controls="search-hotel-panel-photo" tabindex="-1" data-hotel-modal-tab="photo">Фото</button>
+          <button id="search-hotel-tab-reviews" type="button" role="tab" aria-selected="false" aria-controls="search-hotel-panel-reviews" tabindex="-1" data-hotel-modal-tab="reviews">Отзывы</button>
+          <button id="search-hotel-tab-map" type="button" role="tab" aria-selected="false" aria-controls="search-hotel-panel-map" tabindex="-1" data-hotel-modal-tab="map">На карте</button>
+        </nav>
+
+        <div class="search-hotel-modal__viewport" tabindex="0">
+          <div class="search-hotel-modal__content" id="search-hotel-panel-hotel" role="tabpanel" aria-labelledby="search-hotel-tab-hotel" data-hotel-modal-content data-hotel-modal-panel="hotel">
+            <div class="search-hotel-modal__intro-lines"><i></i><i></i><i></i></div>
+
+            <section class="search-hotel-modal__gallery-shell">
+              <div class="search-hotel-modal__main-media"><span></span></div>
+              <aside class="search-hotel-modal__gallery-side">
+                <div class="search-hotel-modal__rating-shell"><b></b><span></span></div>
+                <div class="search-hotel-modal__thumbs">
+                  <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+                </div>
+                <button class="search-hotel-modal__gallery-action" type="button" aria-haspopup="dialog" data-hotel-gallery-open>Больше фото</button>
+              </aside>
+            </section>
+
+            <div class="search-hotel-modal__information">
+              <section class="search-hotel-modal__info-row search-hotel-modal__info-row--large">
+                <div class="search-hotel-modal__info-title"></div>
+                <div class="search-hotel-modal__info-value"><i></i><i></i><i></i><i></i><i></i></div>
+              </section>
+              <section class="search-hotel-modal__info-row"><div class="search-hotel-modal__info-title"></div><div class="search-hotel-modal__info-value"><i></i></div></section>
+              <section class="search-hotel-modal__info-row"><div class="search-hotel-modal__info-title"></div><div class="search-hotel-modal__info-value"><i></i><i></i></div></section>
+              <section class="search-hotel-modal__info-row"><div class="search-hotel-modal__info-title"></div><div class="search-hotel-modal__info-value"><i></i><i></i><i></i><i></i></div></section>
+              <section class="search-hotel-modal__info-row"><div class="search-hotel-modal__info-title"></div><div class="search-hotel-modal__info-value"><i></i></div></section>
+              <section class="search-hotel-modal__info-row"><div class="search-hotel-modal__info-title"></div><div class="search-hotel-modal__info-value"><i></i><i></i><i></i></div></section>
+              <section class="search-hotel-modal__info-row search-hotel-modal__info-row--large"><div class="search-hotel-modal__info-title"></div><div class="search-hotel-modal__info-value"><i></i><i></i><i></i><i></i><i></i><i></i></div></section>
+              <section class="search-hotel-modal__info-row"><div class="search-hotel-modal__info-title"></div><div class="search-hotel-modal__info-value"><i></i><i></i></div></section>
+            </div>
+          </div>
+
+          <section class="search-hotel-modal__api-panel" id="search-hotel-panel-photo" role="tabpanel" aria-labelledby="search-hotel-tab-photo" data-hotel-modal-panel="photo" hidden></section>
+          <section class="search-hotel-modal__api-panel" id="search-hotel-panel-reviews" role="tabpanel" aria-labelledby="search-hotel-tab-reviews" data-hotel-modal-panel="reviews" hidden></section>
+          <section class="search-hotel-modal__api-panel" id="search-hotel-panel-map" role="tabpanel" aria-labelledby="search-hotel-tab-map" data-hotel-modal-panel="map" hidden></section>
+
+        </div>
+      </section>
+    </dialog>
+
+    <dialog class="search-hotel-gallery" data-hotel-gallery aria-label="Фотографии отеля">
+      <div class="search-hotel-gallery__shell">
+        <button class="search-hotel-gallery__close" type="button" aria-label="Закрыть галерею" data-hotel-gallery-close></button>
+        <button class="search-hotel-gallery__arrow search-hotel-gallery__arrow--prev" type="button" aria-label="Предыдущее фото" data-hotel-gallery-prev></button>
+        <div class="search-hotel-gallery__stage" data-hotel-gallery-stage></div>
+        <button class="search-hotel-gallery__arrow search-hotel-gallery__arrow--next" type="button" aria-label="Следующее фото" data-hotel-gallery-next></button>
+        <div class="search-hotel-gallery__counter" aria-live="polite">
+          <span data-hotel-gallery-current></span><i aria-hidden="true">/</i><span data-hotel-gallery-total></span>
+        </div>
+        <div class="search-hotel-gallery__thumbs" data-hotel-gallery-thumbs aria-label="Миниатюры фотографий"></div>
+      </div>
+    </dialog>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <h3>Del Mar Travel</h3>
+        <p>Премиальный подбор путешествий, отелей и индивидуальных маршрутов по всему миру.</p>
+        <div class="footer-socials">
+          <a href="https://www.instagram.com/delmar_kz" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="https://www.tiktok.com/@delmar_kz" target="_blank" rel="noopener noreferrer">TikTok</a>
+          <a href="https://t.me/+77077186699" target="_blank" rel="noopener noreferrer">Telegram</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Связь</h4>
+        <a href="https://wa.me/77770316653" target="_blank" rel="noopener noreferrer">WhatsApp: +7 777 031 66 53</a>
+        <a href="tel:+77770316653">+7 777 031 66 53</a>
+        <a href="tel:+77077186699">+7 707 718 66 99</a>
+        <a href="tel:+77715610980">+7 771 561 09 80</a>
+        <a href="mailto:delmartravel888@gmail.com">delmartravel888@gmail.com</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Соцсети</h4>
+        <a href="https://www.instagram.com/delmar_kz" target="_blank" rel="noopener noreferrer">Instagram: delmar_kz</a>
+        <a href="https://www.tiktok.com/@delmar_kz" target="_blank" rel="noopener noreferrer">TikTok: delmar_kz</a>
+        <a href="https://t.me/+77077186699" target="_blank" rel="noopener noreferrer">Telegram: +7 707 718 66 99</a>
+      </div>
+
+      <div class="footer-col footer-requisites">
+        <h4>Реквизиты</h4>
+        <p>ТОО «DEL MAR TRAVEL»</p>
+        <p>БИН: 220740028941</p>
+        <p>АО «Kaspi Bank»</p>
+        <p>ИИК: KZ43722S000018027876 KZT</p>
+        <p>БИК: CASPKZKA</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>РК, Астана, проспект Кабанбай Батыра, д.13, ВП 28</p>
+      <p>© Del Mar Travel</p>
+    </div>
+  </footer>
+
+  <script src="../../script.js"></script>
+  <script src="../../animations.js"></script>
+  <script src="./tour-form.js?v=hotel-component-audit-2"></script>
+</body>
+</html>

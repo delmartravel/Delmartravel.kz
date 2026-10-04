@@ -1,0 +1,438 @@
+/* Modern Del Mar visual layer for every country page. Structure and controls stay untouched. */
+.country-page-body {
+  --country-bg: #eef1ed;
+  --country-surface: #f7f9f6;
+  --country-ink: #07141d;
+  --country-muted: #66736f;
+  --country-line: rgba(7, 20, 29, .11);
+  --country-accent: #0b7467;
+  --country-photo-frame: rgba(255, 255, 255, .82);
+  --country-photo-border: rgba(7, 20, 29, .12);
+  --country-photo-radius: clamp(18px, 1.7vw, 26px);
+  background: var(--country-bg);
+  color: var(--country-ink);
+}
+
+.country-page-body .country-page {
+  padding-bottom: clamp(104px, 10vw, 156px);
+}
+
+.country-page-body .country-hero-layout {
+  max-width: 1640px;
+  margin-bottom: clamp(112px, 11vw, 168px);
+}
+
+.country-page-body .country-hero {
+  isolation: isolate;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, .48);
+  border-radius: clamp(22px, 2vw, 28px);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, .52) inset,
+    0 24px 68px rgba(7, 20, 29, .16);
+}
+
+.country-page-body .country-hero::after {
+  background:
+    linear-gradient(90deg, rgba(4, 17, 25, .76) 0%, rgba(4, 17, 25, .42) 38%, rgba(4, 17, 25, .08) 72%, transparent 100%),
+    linear-gradient(0deg, rgba(4, 17, 25, .68) 0%, rgba(4, 17, 25, .12) 62%, transparent 100%);
+}
+
+.country-page-body .country-hero__content {
+  max-width: 660px;
+  padding: clamp(32px, 4vw, 58px);
+}
+
+.country-page-body .country-hero__content .section-label,
+.country-page-body .country-section .section-label,
+.country-page-body .country-hotels-cta .section-label {
+  color: #d9ad60;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .16em;
+}
+
+.country-page-body .country-hero h1 {
+  margin-bottom: 18px;
+  font-size: clamp(50px, 4.8vw, 74px) !important;
+  font-weight: 500 !important;
+  line-height: .94 !important;
+  letter-spacing: 0 !important;
+  text-shadow: 0 2px 22px rgba(0, 0, 0, .2);
+}
+
+.country-page-body .country-hero p:not(.section-label) {
+  max-width: 560px;
+  color: rgba(255, 255, 255, .86);
+  font-size: clamp(15px, 1.05vw, 17px);
+  line-height: 1.58;
+  text-shadow: 0 1px 16px rgba(0, 0, 0, .2);
+}
+
+.country-page-body .country-hero__content .button {
+  min-height: 52px;
+  padding-inline: 24px;
+  border: 1px solid rgba(255, 255, 255, .68);
+  border-radius: 999px;
+  background: rgba(250, 252, 249, .94);
+  color: #07141d;
+  box-shadow: 0 12px 32px rgba(4, 17, 25, .2);
+  transition: transform .22s cubic-bezier(.22, 1, .36, 1), background-color .22s ease, box-shadow .22s ease;
+}
+
+.country-page-body .country-hero-nav__link {
+  min-width: 116px;
+  height: 46px;
+  padding: 0 7px;
+  gap: 8px;
+  border-color: rgba(7, 20, 29, .1);
+  background: rgba(247, 249, 246, .86);
+  backdrop-filter: blur(10px) saturate(115%);
+  -webkit-backdrop-filter: blur(10px) saturate(115%);
+  box-shadow: 0 10px 26px rgba(7, 20, 29, .08), inset 0 1px 0 rgba(255, 255, 255, .72);
+}
+
+.country-page-body .country-hero-nav__arrow {
+  width: 32px;
+  height: 32px;
+  flex-basis: 32px;
+  border-color: rgba(7, 20, 29, .08);
+  background: rgba(7, 20, 29, .045);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .country-page-body .country-hero__content .button:hover {
+    transform: translateY(-2px);
+    background: #fff;
+    box-shadow: 0 16px 36px rgba(4, 17, 25, .25);
+  }
+
+  .country-page-body .country-hero-nav__link:hover {
+    box-shadow: 0 14px 30px rgba(7, 20, 29, .11), inset 0 1px 0 rgba(255, 255, 255, .8);
+  }
+}
+
+.country-page-body .country-section {
+  max-width: 1320px;
+  margin-bottom: clamp(112px, 11vw, 172px);
+}
+
+.country-page-body .country-section__head {
+  align-items: start;
+  gap: clamp(36px, 6vw, 92px);
+  margin-bottom: clamp(42px, 5vw, 68px);
+}
+
+.country-page-body .country-section__head h2,
+.country-page-body .country-hotels-cta h2 {
+  color: var(--country-ink);
+  font-size: clamp(42px, 4.6vw, 70px);
+  font-weight: 500;
+  line-height: .98;
+  letter-spacing: 0;
+  text-wrap: balance;
+}
+
+.country-page-body .country-section__head p:not(.section-label),
+.country-page-body .country-text-block,
+.country-page-body .country-resort p,
+.country-page-body .country-sight-card p,
+.country-page-body .country-knowledge-list p,
+.country-page-body .country-travel-notes p {
+  color: var(--country-muted);
+}
+
+.country-page-body .country-section__head p:not(.section-label) {
+  max-width: 680px;
+  font-size: clamp(15px, 1.1vw, 18px);
+  line-height: 1.72;
+}
+
+.country-page-body .country-intro,
+.country-page-body .country-intro .country-section__head,
+.country-page-body .country-intro .country-text-block {
+  max-width: 900px;
+}
+
+.country-page-body .country-text-block {
+  font-size: clamp(17px, 1.25vw, 20px);
+  line-height: 1.9;
+}
+
+.country-page-body .country-resort-list {
+  gap: clamp(92px, 10vw, 150px);
+}
+
+.country-page-body .country-resort {
+  gap: clamp(48px, 6vw, 94px);
+}
+
+.country-page-body .country-resort > img {
+  border: 1px solid var(--country-photo-border);
+  border-radius: var(--country-photo-radius);
+  box-shadow:
+    0 0 0 6px var(--country-photo-frame),
+    0 22px 60px rgba(7, 20, 29, .12);
+}
+
+.country-page-body .country-resort > div {
+  padding: 0;
+}
+
+.country-page-body .country-resort span {
+  margin-bottom: 18px;
+  color: #b58534;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .14em;
+}
+
+.country-page-body .country-resort h3,
+.country-page-body .country-sight-card h3 {
+  color: var(--country-ink);
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.country-page-body .country-resort h3 {
+  margin-bottom: 22px;
+  font-size: clamp(34px, 3.2vw, 50px);
+  line-height: 1.04;
+}
+
+.country-page-body .country-guide-panel,
+.country-page-body .country-season,
+.country-page-body .country-need-to-know {
+  max-width: 1080px;
+  padding-block: clamp(22px, 3vw, 40px);
+  border-color: var(--country-line);
+}
+
+.country-page-body .country-sights .country-section__head {
+  max-width: 900px;
+}
+
+.country-page-body .country-sight-grid {
+  gap: clamp(22px, 2.5vw, 34px);
+}
+
+.country-page-body .country-sight-card {
+  border: 1px solid var(--country-line);
+  border-radius: 22px;
+  background: color-mix(in srgb, var(--country-surface) 90%, transparent);
+  box-shadow: 0 10px 28px rgba(7, 20, 29, .045);
+  overflow: hidden;
+}
+
+.country-page-body .country-sight-card > img {
+  width: calc(100% - 16px);
+  height: clamp(224px, 17vw, 260px);
+  margin: 8px 8px 0;
+  border: 1px solid var(--country-photo-border);
+  border-radius: 16px;
+}
+
+.country-page-body .country-sight-card > div {
+  padding: clamp(22px, 2.1vw, 30px);
+}
+
+.country-page-body .country-sight-card h3 {
+  font-size: clamp(21px, 1.7vw, 28px);
+  line-height: 1.12;
+}
+
+.country-page-body .country-card-icon {
+  color: #b58534;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .country-page-body .country-sight-card:hover {
+    transform: translateY(-3px);
+    border-color: color-mix(in srgb, var(--country-accent) 30%, transparent);
+    box-shadow: 0 18px 42px rgba(7, 20, 29, .08);
+  }
+
+  .country-page-body .country-sight-card:hover img {
+    transform: scale(1.018);
+  }
+}
+
+.country-page-body .country-knowledge-list article,
+.country-page-body .country-travel-notes article {
+  border-color: var(--country-line);
+}
+
+.country-page-body .country-knowledge-list span {
+  color: color-mix(in srgb, var(--country-ink) 52%, transparent);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .14em;
+}
+
+.country-page-body .country-travel-notes h3 {
+  color: var(--country-ink);
+  font-weight: 650;
+}
+
+.country-page-body .country-hotels-cta {
+  max-width: 1320px;
+  border: 1px solid rgba(255, 255, 255, .12);
+  border-radius: 8px;
+  background: #0a3733;
+  box-shadow: none;
+}
+
+.country-page-body .country-hotels-cta h2 {
+  color: #f7faf7;
+}
+
+.country-page-body .country-hotels-cta p {
+  color: rgba(247, 250, 247, .7);
+}
+
+.country-page-body .site-footer {
+  border-top: 1px solid rgba(255, 255, 255, .08);
+  background: #071726;
+}
+
+.dark .country-page-body {
+  --country-bg: #061220;
+  --country-surface: #0c1b29;
+  --country-ink: #f4f7f6;
+  --country-muted: rgba(232, 239, 237, .7);
+  --country-line: rgba(255, 255, 255, .12);
+  --country-accent: #78c6ba;
+  --country-photo-frame: rgba(18, 35, 48, .92);
+  --country-photo-border: rgba(255, 255, 255, .16);
+  background: var(--country-bg);
+}
+
+.dark .country-page-body .country-hero {
+  border-color: rgba(255, 255, 255, .18);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, .12) inset,
+    0 28px 72px rgba(0, 0, 0, .34);
+}
+
+.dark .country-page-body .country-hero-nav__link {
+  border-color: rgba(255, 255, 255, .14);
+  background: rgba(9, 27, 39, .88);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, .24), inset 0 1px 0 rgba(255, 255, 255, .08);
+}
+
+.dark .country-page-body .country-sight-card {
+  border-color: var(--country-line) !important;
+  background: #0c1b29 !important;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, .18);
+}
+
+.dark .country-page-body .country-knowledge-list article,
+.dark .country-page-body .country-travel-notes article {
+  border-color: var(--country-line) !important;
+  background: transparent !important;
+}
+
+.dark .country-page-body .country-hotels-cta {
+  background: #071f1e;
+}
+
+.dark .country-page-body .site-footer {
+  background: #050f1a;
+}
+
+@media (max-width: 1180px) {
+  .country-page-body .country-section__head {
+    gap: 24px;
+  }
+
+  .country-page-body .country-resort {
+    gap: 38px;
+  }
+}
+
+@media (max-width: 760px) {
+  .country-page-body .country-page {
+    padding-bottom: 72px;
+  }
+
+  .country-page-body .country-hero-layout {
+    margin-bottom: 88px;
+  }
+
+  .country-page-body .country-hero {
+    border-radius: 18px;
+    box-shadow: 0 18px 44px rgba(7, 20, 29, .16);
+  }
+
+  .country-page-body .country-hero__content {
+    padding: 24px;
+  }
+
+  .country-page-body .country-hero h1 {
+    font-size: clamp(40px, 12vw, 52px) !important;
+    line-height: .98 !important;
+  }
+
+  .country-page-body .country-hero p:not(.section-label) {
+    font-size: 15px;
+    line-height: 1.52;
+  }
+
+  .country-page-body .country-hero__content .button {
+    min-height: 50px;
+  }
+
+  .country-page-body .country-hero-nav__link {
+    height: 44px;
+    box-shadow: 0 8px 22px rgba(7, 20, 29, .08);
+  }
+
+  .country-page-body .country-section {
+    margin-bottom: 96px;
+  }
+
+  .country-page-body .country-section__head {
+    margin-bottom: 38px;
+  }
+
+  .country-page-body .country-section__head h2,
+  .country-page-body .country-hotels-cta h2 {
+    font-size: clamp(36px, 10vw, 48px);
+    line-height: 1;
+  }
+
+  .country-page-body .country-resort-list {
+    gap: 76px;
+  }
+
+  .country-page-body .country-resort {
+    gap: 28px;
+  }
+
+  .country-page-body .country-resort > img,
+  .country-page-body .country-sight-card,
+  .country-page-body .country-sight-card > img {
+    border-radius: 16px;
+  }
+
+  .country-page-body .country-sight-card > img {
+    border-radius: 12px;
+  }
+
+  .country-page-body .country-hotels-cta {
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 760px) {
+  .dark .country-page-body .country-hero {
+    box-shadow: 0 20px 48px rgba(0, 0, 0, .32);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .country-page-body .country-sight-card,
+  .country-page-body .country-sight-card img {
+    transition: none;
+  }
+}

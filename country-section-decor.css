@@ -1,0 +1,491 @@
+.country-page:not(.country-page--turkey) [data-country-decor-section] {
+  position: relative;
+  isolation: isolate;
+}
+
+.country-page:not(.country-page--turkey) {
+  overflow-x: clip;
+}
+
+.country-page:not(.country-page--turkey) [data-country-decor-section] > :not(.country-section-decor) {
+  position: relative;
+  z-index: 1;
+}
+
+.country-section-decor {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+  will-change: transform;
+}
+
+.country-section-decor img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.country-section-decor--intro { top: 18%; right: -20%; width: clamp(150px, 14vw, 220px); }
+.country-section-decor--resorts { bottom: -102px; left: 7%; width: clamp(96px, 9vw, 155px); }
+.country-section-decor--guide { top: 22%; right: -12%; width: clamp(125px, 10vw, 175px); }
+.country-section-decor--season { top: 18%; right: -12%; width: clamp(125px, 10vw, 175px); }
+.country-section-decor--sights { bottom: -98px; right: 4%; width: clamp(94px, 8vw, 140px); }
+.country-section-decor--sights.country-section-decor--egypt-compass {
+  bottom: -170px;
+  right: clamp(36px, 7vw, 108px);
+}
+.country-section-decor--maldives-seaplane {
+  top: clamp(26px, 5vw, 78px);
+  right: clamp(-112px, -7vw, -54px);
+  width: clamp(190px, 18vw, 286px);
+}
+.country-section-decor--maldives-dhoni {
+  right: clamp(-96px, -6vw, -42px);
+  bottom: clamp(-150px, -9.5vw, -104px);
+  width: clamp(180px, 17vw, 270px);
+  padding: 0;
+}
+.country-section-decor--thailand-parasol {
+  top: clamp(-116px, -7vw, -82px);
+  right: clamp(34px, 7vw, 104px);
+  width: clamp(104px, 9vw, 142px);
+}
+.country-section-decor--resorts.country-section-decor--thailand-lotus {
+  left: clamp(30px, 6vw, 92px);
+  bottom: clamp(-116px, -7.5vw, -84px);
+  width: clamp(92px, 8vw, 126px);
+}
+.country-section-decor--season.country-section-decor--thailand-leaf {
+  top: 14%;
+  right: clamp(-150px, -10vw, -92px);
+  width: clamp(90px, 8vw, 118px);
+}
+.country-section-decor--sights.country-section-decor--thailand-boat {
+  right: auto;
+  left: clamp(24px, 5vw, 76px);
+  bottom: clamp(-164px, -10vw, -146px);
+  width: clamp(146px, 13vw, 206px);
+}
+.country-section-decor--notes.country-section-decor--thailand-elephant {
+  top: clamp(-126px, -8vw, -88px);
+  right: clamp(36px, 7vw, 108px);
+  left: auto;
+  width: clamp(104px, 9vw, 144px);
+}
+.country-section-decor--cta.country-section-decor--thailand-journal {
+  top: clamp(-164px, -10vw, -142px);
+  right: clamp(40px, 8vw, 118px);
+  width: clamp(52px, 4.6vw, 68px);
+}
+.country-section-decor--thailand-tuktuk {
+  right: clamp(-22px, -1.5vw, -8px);
+  bottom: clamp(-164px, -10vw, -146px);
+  width: clamp(144px, 13vw, 204px);
+  padding: 0;
+}
+.country-resort > .country-section-decor--thailand-tuktuk img {
+  height: auto;
+  object-fit: contain;
+  border-radius: 0;
+  box-shadow: none;
+}
+.country-section-decor--vietnam-pagoda {
+  top: clamp(-138px, -8.5vw, -104px);
+  right: clamp(34px, 7vw, 108px);
+  width: clamp(116px, 10vw, 154px);
+}
+.country-section-decor--resorts.country-section-decor--vietnam-hat {
+  left: clamp(34px, 7vw, 104px);
+  bottom: clamp(-126px, -8vw, -96px);
+  width: clamp(106px, 9vw, 142px);
+}
+.country-section-decor--season.country-section-decor--vietnam-coffee {
+  top: 20%;
+  right: clamp(-132px, -9vw, -86px);
+  width: clamp(92px, 8vw, 118px);
+}
+.country-section-decor--sights.country-section-decor--vietnam-boat {
+  right: auto;
+  left: clamp(26px, 5vw, 78px);
+  bottom: clamp(-166px, -10vw, -146px);
+  width: clamp(154px, 14vw, 220px);
+}
+.country-section-decor--notes.country-section-decor--vietnam-lantern {
+  top: 18%;
+  right: auto;
+  left: clamp(-104px, -7vw, -76px);
+  width: clamp(44px, 3.8vw, 56px);
+}
+.country-section-decor--cta.country-section-decor--vietnam-fan {
+  top: clamp(-144px, -9vw, -116px);
+  right: clamp(38px, 8vw, 116px);
+  width: clamp(104px, 9vw, 138px);
+}
+.country-section-decor--vietnam-scooter {
+  right: clamp(-20px, -1.4vw, -8px);
+  bottom: clamp(-166px, -10vw, -146px);
+  width: clamp(150px, 14vw, 216px);
+  padding: 0;
+}
+.country-resort > .country-section-decor--vietnam-scooter img {
+  height: auto;
+  object-fit: contain;
+  border-radius: 0;
+  box-shadow: none;
+}
+.country-section-decor--srilanka-elephant {
+  top: clamp(-136px, -8.5vw, -102px);
+  right: clamp(38px, 7vw, 108px);
+  width: clamp(112px, 10vw, 152px);
+}
+.country-section-decor--resorts.country-section-decor--srilanka-tea {
+  left: clamp(34px, 7vw, 102px);
+  bottom: clamp(-126px, -8vw, -96px);
+  width: clamp(98px, 8.5vw, 132px);
+}
+.country-section-decor--season.country-section-decor--srilanka-scoop {
+  top: 20%;
+  right: clamp(-126px, -8.5vw, -82px);
+  width: clamp(86px, 7.5vw, 112px);
+}
+.country-section-decor--sights.country-section-decor--srilanka-train {
+  right: auto;
+  left: clamp(24px, 5vw, 76px);
+  bottom: clamp(-164px, -10vw, -144px);
+  width: clamp(168px, 15vw, 232px);
+}
+.country-section-decor--notes.country-section-decor--srilanka-mask {
+  top: clamp(-138px, -8.5vw, -102px);
+  right: clamp(38px, 7vw, 108px);
+  left: auto;
+  width: clamp(104px, 9vw, 140px);
+}
+.country-section-decor--cta.country-section-decor--srilanka-compass {
+  top: clamp(-168px, -10.5vw, -148px);
+  right: clamp(42px, 8vw, 118px);
+  width: clamp(88px, 7.5vw, 116px);
+}
+.country-section-decor--srilanka-cinnamon {
+  right: clamp(-18px, -1.3vw, -8px);
+  bottom: clamp(-164px, -10vw, -144px);
+  width: clamp(150px, 14vw, 216px);
+  padding: 0;
+}
+.country-resort > .country-section-decor--srilanka-cinnamon img {
+  height: auto;
+  object-fit: contain;
+  border-radius: 0;
+  box-shadow: none;
+}
+.country-section-decor--qatar-falcon {
+  top: clamp(-184px, -11.5vw, -154px);
+  left: clamp(116px, 15vw, 236px);
+  width: clamp(82px, 7vw, 104px);
+}
+.country-section-decor--resorts.country-section-decor--qatar-pearl {
+  right: clamp(190px, 26vw, 390px);
+  left: auto;
+  bottom: clamp(-142px, -9vw, -118px);
+  width: clamp(92px, 8vw, 122px);
+}
+.country-section-decor--season.country-section-decor--qatar-incense {
+  top: 34%;
+  right: auto;
+  left: clamp(-92px, -6vw, -58px);
+  width: clamp(60px, 5.2vw, 78px);
+}
+.country-section-decor--sights.country-section-decor--qatar-skyline {
+  top: clamp(-184px, -11vw, -154px);
+  right: clamp(74px, 12vw, 182px);
+  bottom: auto;
+  width: clamp(176px, 16vw, 248px);
+}
+.country-section-decor--notes.country-section-decor--qatar-rose {
+  top: auto;
+  bottom: clamp(-136px, -8.5vw, -112px);
+  left: clamp(228px, 32vw, 470px);
+  width: clamp(98px, 8.5vw, 132px);
+}
+.country-section-decor--cta.country-section-decor--qatar-binoculars {
+  top: clamp(-128px, -8vw, -106px);
+  right: auto;
+  left: clamp(52px, 10vw, 142px);
+  width: clamp(104px, 9vw, 136px);
+}
+.country-section-decor--qatar-dhow {
+  left: clamp(-18px, -1.2vw, -8px);
+  bottom: clamp(-136px, -8.5vw, -122px);
+  width: clamp(150px, 13vw, 178px);
+  padding: 0;
+}
+.country-resort > .country-section-decor--qatar-dhow img {
+  height: auto;
+  object-fit: contain;
+  border-radius: 0;
+  box-shadow: none;
+}
+.country-section-decor--china-dragon {
+  top: clamp(-166px, -10.5vw, -134px);
+  right: clamp(70px, 12vw, 184px);
+  width: clamp(144px, 13vw, 202px);
+}
+.country-section-decor--resorts.country-section-decor--china-lion {
+  right: clamp(220px, 34vw, 510px);
+  left: auto;
+  bottom: clamp(-148px, -9vw, -130px);
+  width: clamp(76px, 6.5vw, 92px);
+}
+.country-section-decor--season.country-section-decor--china-tea {
+  top: 32%;
+  right: clamp(-150px, -10vw, -96px);
+  width: clamp(120px, 11vw, 166px);
+}
+.china-wall-panorama-band {
+  position: relative;
+  isolation: isolate;
+  width: min(1360px, calc(100% - 24px));
+  height: clamp(190px, 20vw, 285px);
+  margin: clamp(-18px, -1vw, 0px) auto clamp(96px, 9vw, 138px);
+  overflow: visible;
+  pointer-events: none;
+}
+.country-section-decor--china-wall-panorama {
+  top: 0;
+  right: 2%;
+  bottom: auto;
+  left: 2%;
+  width: auto;
+  max-width: none;
+  z-index: 0;
+}
+.country-section-decor--china-wall-panorama img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+.country-section-decor--notes.country-section-decor--china-calligraphy {
+  top: auto;
+  bottom: clamp(-140px, -9vw, -118px);
+  left: clamp(118px, 18vw, 276px);
+  width: clamp(142px, 13vw, 194px);
+}
+.country-section-decor--cta.country-section-decor--china-lantern {
+  top: clamp(-154px, -9.5vw, -128px);
+  right: clamp(70px, 13vw, 194px);
+  width: clamp(54px, 4.8vw, 72px);
+}
+.country-section-decor--season.country-section-decor--georgia-leaf {
+  top: 48%;
+  right: clamp(-92px, -6vw, -58px);
+  width: clamp(86px, 7.5vw, 112px);
+}
+.country-section-decor--cta.country-section-decor--georgia-journal {
+  top: clamp(-176px, -11vw, -152px);
+  right: clamp(54px, 9vw, 136px);
+  width: clamp(72px, 6vw, 92px);
+}
+.country-section-decor--china-fan {
+  right: clamp(-18px, -1.2vw, -8px);
+  bottom: clamp(-140px, -8.5vw, -126px);
+  width: clamp(150px, 13vw, 190px);
+  padding: 0;
+}
+.country-section-decor--china-warrior {
+  left: clamp(18px, 4vw, 60px);
+  bottom: clamp(-138px, -8.5vw, -126px);
+  width: clamp(62px, 5.5vw, 80px);
+  padding: 0;
+}
+.country-resort > .country-section-decor--china-fan img,
+.country-resort > .country-section-decor--china-warrior img {
+  height: auto;
+  object-fit: contain;
+  border-radius: 0;
+  box-shadow: none;
+}
+.country-resort > .country-section-decor--maldives-dhoni img {
+  height: auto;
+  object-fit: contain;
+  border-radius: 0;
+  box-shadow: none;
+}
+.country-section-decor--sights.country-section-decor--maldives-manta {
+  top: clamp(-132px, -8vw, -88px);
+  right: auto;
+  bottom: auto;
+  left: clamp(22px, 5vw, 76px);
+  width: clamp(160px, 15vw, 238px);
+}
+.country-section-decor--uae-palm {
+  top: 8%;
+  left: clamp(4px, 3vw, 48px);
+  right: auto;
+  bottom: auto;
+  width: clamp(128px, 11vw, 178px);
+}
+.country-section-decor--uae-shell {
+  top: 7%;
+  left: clamp(8px, 3vw, 44px);
+  right: auto;
+  bottom: auto;
+  width: clamp(112px, 9vw, 148px);
+}
+.country-section-decor--notes { top: clamp(430px, 30vw, 520px); left: 9%; width: clamp(96px, 8vw, 130px); }
+.country-section-decor--notes.country-section-decor--egypt-palm {
+  top: clamp(220px, 20vw, 300px);
+  right: auto;
+  left: clamp(230px, 22vw, 318px);
+  width: clamp(88px, 8vw, 126px);
+}
+.country-section-decor--notes.country-section-decor--maldives-coral {
+  top: clamp(-138px, -9vw, -92px);
+  left: clamp(34px, 6vw, 92px);
+  width: clamp(108px, 10vw, 158px);
+}
+.country-section-decor--notes.country-section-decor--uae-shell {
+  top: clamp(-118px, -8vw, -72px);
+  left: clamp(72px, 12vw, 184px);
+  width: clamp(130px, 12vw, 190px);
+  z-index: 1;
+}
+.country-section-decor--cta { top: -118px; right: 8%; width: clamp(100px, 8vw, 140px); }
+
+.country-section-decor--dubai {
+  top: clamp(-156px, -10vw, -116px);
+  left: 0;
+  right: auto;
+  width: clamp(78px, 7vw, 112px);
+  z-index: 2;
+}
+
+@media (max-width: 1100px) {
+  .country-page--china .country-section-decor--china-lion,
+  .country-page--georgia .country-section-decor--resorts,
+  .country-page--georgia .country-section-decor--notes {
+    display: none;
+  }
+}
+
+.country-page--uae .country-resort > div > .country-section-decor {
+  padding: 0;
+}
+
+@media (max-width: 900px) {
+  .country-page--georgia .country-section-decor--georgia-leaf,
+  .country-page--georgia .country-section-decor--georgia-journal {
+    display: none;
+  }
+
+  .country-section-decor--intro { right: -10%; width: clamp(125px, 15vw, 180px); }
+  .country-section-decor--resorts { bottom: -82px; width: clamp(82px, 10vw, 115px); }
+  .country-section-decor--guide { right: -8%; width: clamp(110px, 11vw, 145px); }
+  .country-section-decor--season { right: -8%; width: clamp(105px, 11vw, 140px); }
+  .country-section-decor--sights { bottom: -76px; width: clamp(84px, 9vw, 115px); }
+  .country-section-decor--sights.country-section-decor--egypt-compass {
+    bottom: -136px;
+    right: clamp(24px, 6vw, 64px);
+  }
+  .country-section-decor--maldives-seaplane {
+    top: 18px;
+    right: -72px;
+    width: clamp(148px, 22vw, 208px);
+  }
+  .country-section-decor--maldives-dhoni {
+    right: -58px;
+    bottom: -112px;
+    width: clamp(142px, 21vw, 198px);
+  }
+  .country-section-decor--resorts.country-section-decor--thailand-lotus { bottom: -82px; left: 24px; width: 88px; }
+  .country-section-decor--notes.country-section-decor--thailand-elephant { top: -92px; right: 24px; width: 98px; }
+  .country-section-decor--cta.country-section-decor--thailand-journal { top: -112px; right: 30px; width: 48px; }
+  .country-section-decor--thailand-parasol,
+  .country-section-decor--season.country-section-decor--thailand-leaf,
+  .country-section-decor--sights.country-section-decor--thailand-boat,
+  .country-section-decor--thailand-tuktuk { display: none; }
+  .country-section-decor--resorts.country-section-decor--vietnam-hat { bottom: -84px; left: 24px; width: 94px; }
+  .country-section-decor--cta.country-section-decor--vietnam-fan { top: -102px; right: 28px; width: 94px; }
+  .country-section-decor--vietnam-pagoda,
+  .country-section-decor--season.country-section-decor--vietnam-coffee,
+  .country-section-decor--sights.country-section-decor--vietnam-boat,
+  .country-section-decor--notes.country-section-decor--vietnam-lantern,
+  .country-section-decor--vietnam-scooter { display: none; }
+  .country-section-decor--resorts.country-section-decor--srilanka-tea { bottom: -84px; left: 24px; width: 88px; }
+  .country-section-decor--notes.country-section-decor--srilanka-mask { top: -92px; right: 24px; width: 96px; }
+  .country-section-decor--cta.country-section-decor--srilanka-compass { top: -112px; right: 30px; width: 72px; }
+  .country-section-decor--srilanka-elephant,
+  .country-section-decor--season.country-section-decor--srilanka-scoop,
+  .country-section-decor--sights.country-section-decor--srilanka-train,
+  .country-section-decor--srilanka-cinnamon { display: none; }
+  .country-section-decor--resorts.country-section-decor--qatar-pearl { right: 24%; bottom: -86px; width: 82px; }
+  .country-section-decor--notes.country-section-decor--qatar-rose { bottom: -86px; left: 22%; width: 84px; }
+  .country-section-decor--cta.country-section-decor--qatar-binoculars { top: -92px; left: 26px; width: 92px; }
+  .country-section-decor--qatar-falcon,
+  .country-section-decor--season.country-section-decor--qatar-incense,
+  .country-section-decor--sights.country-section-decor--qatar-skyline,
+  .country-section-decor--qatar-dhow { display: none; }
+  .country-section-decor--resorts.country-section-decor--china-lion { right: 28%; bottom: -90px; width: 64px; }
+  .country-section-decor--notes.country-section-decor--china-calligraphy { bottom: -90px; left: 12%; width: 116px; }
+  .country-section-decor--cta.country-section-decor--china-lantern { top: -104px; right: 28px; width: 48px; }
+  .country-section-decor--season.country-section-decor--georgia-leaf {
+    top: 52%;
+    right: -54px;
+    width: 82px;
+  }
+  .country-section-decor--cta.country-section-decor--georgia-journal {
+    top: -126px;
+    right: 26px;
+    width: 62px;
+  }
+  .country-section-decor--china-dragon,
+  .country-section-decor--season.country-section-decor--china-tea,
+  .country-section-decor--china-fan,
+  .country-section-decor--china-warrior { display: none; }
+  .china-wall-panorama-band {
+    height: clamp(120px, 20vw, 170px);
+    margin-bottom: 76px;
+  }
+  .country-section-decor--china-wall-panorama {
+    right: 1%;
+    left: 1%;
+  }
+  .country-section-decor--sights.country-section-decor--maldives-manta {
+    top: -94px;
+    left: 12px;
+    width: clamp(126px, 19vw, 176px);
+  }
+  .country-section-decor--uae-palm { top: 6%; left: 1%; width: clamp(104px, 12vw, 136px); }
+  .country-section-decor--uae-shell { top: 5%; left: 1%; width: clamp(94px, 10vw, 120px); }
+  .country-section-decor--notes { top: 360px; width: clamp(82px, 9vw, 105px); }
+  .country-section-decor--notes.country-section-decor--egypt-palm {
+    top: 320px;
+    right: 20px;
+    left: auto;
+    width: clamp(76px, 12vw, 102px);
+  }
+  .country-section-decor--notes.country-section-decor--maldives-coral {
+    top: -102px;
+    left: 18px;
+    width: clamp(88px, 14vw, 122px);
+  }
+  .country-section-decor--notes.country-section-decor--uae-shell { top: -82px; left: clamp(48px, 10vw, 100px); width: clamp(112px, 15vw, 150px); }
+  .country-section-decor--cta { top: -96px; width: clamp(86px, 9vw, 112px); }
+  .country-section-decor--dubai { top: -112px; left: 0; width: clamp(68px, 8vw, 92px); }
+}
+
+@media (max-width: 560px) {
+  .country-section-decor { display: none; }
+  .china-wall-panorama-band { display: none; }
+  .country-page--uae .country-section-decor--uae-shell {
+    display: block;
+    top: -82px;
+    left: 56px;
+    width: 118px;
+    z-index: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .country-section-decor { transform: none !important; }
+}

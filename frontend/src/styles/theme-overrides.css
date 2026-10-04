@@ -1,0 +1,186 @@
+.dark body,
+.dark .country-page-body,
+.dark .search-page-body {
+  background: #061220;
+  color: #f4f7f6;
+}
+
+.dark .legacy-home .travel-moods {
+  background: linear-gradient(145deg, #081722 0%, #0b1e2b 52%, #09242a 100%);
+}
+
+.dark .legacy-home .travel-moods::before { opacity: .18; }
+.dark .legacy-home .directions-scene__eyebrow,
+.dark .legacy-home .directions-scene__heading > span { color: rgba(244, 247, 246, .56); }
+.dark .legacy-home .directions-scene__heading { border-color: rgba(255, 255, 255, .12); }
+.dark .legacy-home .directions-scene__heading h2,
+.dark .legacy-home .directions-stack__identity strong { color: #f4f7f6; }
+.dark .legacy-home .directions-stack__arrows {
+  border-color: rgba(255, 255, 255, .14);
+  background: rgba(255, 255, 255, .05);
+}
+.dark .legacy-home .directions-stack__actions .directions-stack__arrow {
+  border-color: transparent;
+  background: transparent;
+  color: #f4f7f6;
+}
+
+.dark .legacy-home .directions-stack [data-active="true"] {
+  box-shadow: 0 32px 82px rgba(0, 0, 0, .46), 0 10px 28px rgba(0, 0, 0, .28);
+}
+
+.dark .legacy-home .directions-stack[data-card-hovered="true"] [data-active="true"] {
+  box-shadow:
+    0 36px 92px rgba(0, 0, 0, .5),
+    0 12px 32px rgba(0, 0, 0, .3),
+    0 0 38px rgba(76, 194, 169, .22);
+}
+
+.dark .legacy-home .why-us,
+.dark .legacy-home .process-section,
+.dark .legacy-home .reviews-section {
+  background: #081722;
+  color: #f4f7f6;
+}
+
+.dark .legacy-home .why-us.why-story {
+  background: #081722;
+  color: #f4f7f6;
+}
+
+.dark .legacy-home .why-story__copy h2 {
+  color: #f4f7f6;
+}
+
+.dark .legacy-home .why-story__narrative p {
+  color: rgba(232, 239, 237, .72);
+}
+
+.dark .legacy-home .why-story__media {
+  background: #102430;
+}
+
+.dark .legacy-home .why-left h2,
+.dark .legacy-home .section-head h2,
+.dark .country-page h1,
+.dark .country-page h2,
+.dark .country-page h3,
+.dark .search-page h1,
+.dark .search-page h2,
+.dark .search-page h3 { color: #f4f7f6; }
+
+.dark .legacy-home .why-left > p:not(.section-label),
+.dark .legacy-home .section-head > p:not(.section-label),
+.dark .country-page p,
+.dark .search-page p { color: rgba(232, 239, 237, .74); }
+
+.dark .legacy-home .why-left .section-label {
+  color: #78c6ba;
+}
+
+.dark .legacy-home .why-card h3 {
+  color: #f4f7f6;
+}
+
+.dark .legacy-home .why-card p {
+  color: rgba(232, 239, 237, .72);
+}
+
+.dark .legacy-home .why-card > span,
+.dark .legacy-home .why-card .why-icon {
+  color: #67bfd5;
+}
+
+.dark .legacy-home .why-card .why-icon {
+  background: rgba(103, 191, 213, .12);
+}
+
+.dark .legacy-home .why-card,
+.dark .country-page article,
+.dark .country-page [class*="card"],
+.dark .tour-search-form,
+.dark .tour-search-field,
+.dark .tour-search-panel,
+.dark .tour-search-list,
+.dark .search-results,
+.dark .search-results__toolbar,
+.dark .hotel-result-card {
+  border-color: rgba(255, 255, 255, .12) !important;
+  background-color: #0c1b29 !important;
+  color: #f4f7f6;
+}
+
+.dark .country-page article h2,
+.dark .country-page article h3,
+.dark .country-page article h4,
+.dark .country-page [class*="card"] h2,
+.dark .country-page [class*="card"] h3,
+.dark .country-page [class*="card"] strong,
+.dark .tour-search-form strong,
+.dark .tour-search-form label,
+.dark .tour-search-form span:not(.sr-only) { color: inherit; }
+
+.dark .tour-search-form input,
+.dark .tour-search-form select,
+.dark .tour-search-form button:not(.tour-search-submit),
+.dark .tour-search-form [role="button"] {
+  border-color: rgba(255, 255, 255, .13);
+  background-color: rgba(255, 255, 255, .045);
+  color: #f4f7f6;
+}
+
+.dark .tour-search-form input::placeholder { color: rgba(232, 239, 237, .52); }
+
+.dark .tour-search-check {
+  border-color: rgba(255, 255, 255, .13);
+  background: rgba(255, 255, 255, .045);
+  color: #f4f7f6;
+}
+
+.dark .country-page-body .delmar-header--surface .header-glass,
+.dark .search-page-body .delmar-header--surface .header-glass { background: rgba(3, 16, 27, .94); }
+
+.dark .country-side-nav {
+  border-color: rgba(255, 255, 255, .16);
+  background: rgba(12, 27, 41, .88);
+  color: #f4f7f6;
+}
+
+.dark .country-side-nav span,
+.dark .country-side-nav strong { color: #f4f7f6; }
+
+.dark .country-hero-nav__link {
+  border-color: rgba(255, 255, 255, .16);
+  background: rgba(8, 24, 38, .78);
+  color: #f4f7f6;
+  box-shadow: 0 12px 34px rgba(0, 0, 0, .24), inset 0 1px 0 rgba(255, 255, 255, .08);
+}
+
+.dark .country-hero-nav__arrow {
+  border-color: rgba(255, 255, 255, .12);
+  background: rgba(255, 255, 255, .08);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .dark .country-hero-nav__link:hover {
+    border-color: rgba(76, 194, 169, .42);
+    background: rgba(13, 38, 52, .96);
+    color: #8dd7c6;
+    box-shadow: 0 16px 38px rgba(0, 0, 0, .3), inset 0 1px 0 rgba(255, 255, 255, .1);
+  }
+
+  .dark .country-hero-nav__link:hover .country-hero-nav__arrow {
+    border-color: rgba(76, 194, 169, .25);
+    background: rgba(76, 194, 169, .13);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body,
+  .country-page-body,
+  .search-page-body,
+  .travel-moods,
+  .why-us,
+  .process-section,
+  .reviews-section { transition: none; }
+}

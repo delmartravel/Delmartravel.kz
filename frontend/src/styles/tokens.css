@@ -1,0 +1,64 @@
+:root {
+  color-scheme: light;
+
+  --brand-ink: #061220;
+  --brand-green: #07594f;
+  --brand-gold: #d6ad60;
+  --brand-aqua: #00a9d6;
+  --brand-surface: #eef1ed;
+
+  --background: var(--brand-surface);
+  --foreground: var(--brand-ink);
+  --card: #f7f9f6;
+  --card-foreground: var(--brand-ink);
+  --popover: #f7f9f6;
+  --popover-foreground: var(--brand-ink);
+  --primary: var(--brand-green);
+  --primary-foreground: #ffffff;
+  --secondary: #e3e9e5;
+  --secondary-foreground: #063b34;
+  --muted: #e7ece8;
+  --muted-foreground: #60716e;
+  --accent: #f4ead7;
+  --accent-foreground: #513b16;
+  --destructive: #b42318;
+  --border: #d2dcd6;
+  --input: #c9d5cf;
+  --ring: #00806f;
+
+  --radius: 0.625rem;
+  --page-gutter: clamp(1.25rem, 4vw, 4rem);
+  --content-max: 90rem;
+  --section-space: clamp(4rem, 8vw, 7rem);
+
+  --shadow-soft: 0 1rem 3rem rgb(6 18 32 / 8%);
+  --shadow-overlay: 0 1.5rem 5rem rgb(6 18 32 / 18%);
+
+  --motion-duration-fast: 180ms;
+  --motion-duration-base: 240ms;
+  --motion-duration-slow: 480ms;
+  --motion-ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
+  --motion-ease-exit: cubic-bezier(0.4, 0, 1, 1);
+}
+
+.dark {
+  color-scheme: dark;
+  --background: #061220;
+  --foreground: #f8fbfa;
+  --card: #0c1b29;
+  --card-foreground: #f8fbfa;
+  --popover: #0c1b29;
+  --popover-foreground: #f8fbfa;
+  --primary: #6fc3b6;
+  --primary-foreground: #061f1b;
+  --secondary: #132a2b;
+  --secondary-foreground: #edf8f5;
+  --muted: #122431;
+  --muted-foreground: #a8b8b5;
+  --accent: #493d25;
+  --accent-foreground: #fff7e6;
+  --destructive: #ff8a80;
+  --border: rgb(255 255 255 / 12%);
+  --input: rgb(255 255 255 / 16%);
+  --ring: #6fc3b6;
+}

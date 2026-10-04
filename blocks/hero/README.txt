@@ -1,0 +1,1 @@
+Hero: видео-фон, меню, CTA-кнопки, статистика. Медиа: assets/videos/hero.mp4 и assets/logos/logo.png.

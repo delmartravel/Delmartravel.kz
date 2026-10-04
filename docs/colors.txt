@@ -1,0 +1,8 @@
+COLORS
+
+Dark: #061220
+Aqua: #00A9D6
+WhatsApp Green: #25D366
+Background: #fafaf8
+Text: #061220
+Muted: rgba(6,18,32,.64)

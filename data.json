@@ -1,0 +1,268 @@
+{
+  "formats": {
+    "beach": {
+      "title": "Пляжный отдых",
+      "countries": [
+        "turkey",
+        "maldives",
+        "egypt",
+        "thailand",
+        "vietnam",
+        "uae"
+      ]
+    },
+    "family": {
+      "title": "Семейный отдых",
+      "countries": [
+        "turkey",
+        "egypt",
+        "thailand",
+        "uae",
+        "vietnam"
+      ]
+    },
+    "couples": {
+      "title": "Для двоих",
+      "countries": [
+        "maldives",
+        "thailand",
+        "vietnam",
+        "uae"
+      ]
+    },
+    "premium": {
+      "title": "Премиум-отели",
+      "countries": [
+        "turkey",
+        "maldives",
+        "egypt",
+        "vietnam",
+        "uae",
+        "thailand"
+      ]
+    },
+    "exotic": {
+      "title": "Экзотика",
+      "countries": [
+        "maldives",
+        "thailand",
+        "vietnam",
+        "uae"
+      ]
+    }
+  },
+  "countries": {
+    "turkey": {
+      "title": "Турция",
+      "summary": "Белек, Кемер, Бодрум, Сиде и Стамбул — от семейных курортов до премиальных отелей.",
+      "regions": {
+        "belek": {
+          "title": "Белек",
+          "hotels": [
+            "Regnum Carya",
+            "Cullinan Belek",
+            "Maxx Royal Belek",
+            "Gloria Serenity",
+            "Kaya Palazzo Belek",
+            "Voyage Belek"
+          ]
+        },
+        "kemer": {
+          "title": "Кемер",
+          "hotels": [
+            "Maxx Royal Kemer",
+            "NG Phaselis Bay",
+            "Rixos Premium Tekirova",
+            "Nirvana Dolce Vita"
+          ]
+        },
+        "bodrum": {
+          "title": "Бодрум",
+          "hotels": [
+            "Lujo Bodrum",
+            "Titanic Luxury Collection Bodrum",
+            "Mandarin Oriental Bodrum",
+            "Susona Bodrum"
+          ]
+        },
+        "istanbul": {
+          "title": "Стамбул",
+          "hotels": [
+            "Four Seasons Bosphorus",
+            "Çırağan Palace Kempinski",
+            "The Peninsula Istanbul",
+            "Raffles Istanbul"
+          ]
+        }
+      }
+    },
+    "egypt": {
+      "title": "Египет",
+      "summary": "Шарм-эль-Шейх, Хургада, Марса-Алам и Эль-Аламейн — море, рифы и отели All Inclusive.",
+      "regions": {
+        "sharm": {
+          "title": "Шарм-эль-Шейх",
+          "hotels": [
+            "Rixos Radamis Sharm",
+            "Rixos Premium Seagate",
+            "Swissotel Sharm",
+            "Savoy Sharm",
+            "Sultan Gardens"
+          ]
+        },
+        "hurghada": {
+          "title": "Хургада",
+          "hotels": [
+            "Rixos Premium Magawish",
+            "Steigenberger ALDAU",
+            "Baron Palace Sahl Hasheesh",
+            "Jaz Aquaviva"
+          ]
+        },
+        "marsaalam": {
+          "title": "Марса-Алам",
+          "hotels": [
+            "Steigenberger Coraya",
+            "Jaz Grand Marsa",
+            "Hilton Marsa Alam Nubian Resort"
+          ]
+        },
+        "alamein": {
+          "title": "Эль-Аламейн",
+          "hotels": [
+            "Rixos Premium Alamein",
+            "Address Beach Resort Marassi",
+            "Al Alamein Hotel"
+          ]
+        }
+      }
+    },
+    "maldives": {
+      "title": "Мальдивы",
+      "summary": "Виллы над водой, приватность, высокий сервис и отдых для двоих или семьи.",
+      "regions": {
+        "north-male": {
+          "title": "North Malé Atoll",
+          "hotels": [
+            "JOALI Maldives",
+            "Patina Maldives",
+            "Baros Maldives",
+            "One&Only Reethi Rah"
+          ]
+        },
+        "baa-atoll": {
+          "title": "Baa Atoll",
+          "hotels": [
+            "Soneva Fushi",
+            "Four Seasons Landaa Giraavaru",
+            "Vakkaru Maldives",
+            "The Nautilus Maldives"
+          ]
+        },
+        "south-ari": {
+          "title": "South Ari Atoll",
+          "hotels": [
+            "Conrad Maldives Rangali Island",
+            "LUX* South Ari Atoll",
+            "Mirihi Island Resort"
+          ]
+        }
+      }
+    },
+    "thailand": {
+      "title": "Таиланд",
+      "summary": "Пхукет, Самуи, Као-Лак и Бангкок — пляжи, виллы, гастрономия и отдых круглый год.",
+      "regions": {
+        "phuket": {
+          "title": "Пхукет",
+          "hotels": [
+            "The Nai Harn Phuket",
+            "Katathani Phuket",
+            "Trisara Phuket",
+            "InterContinental Phuket"
+          ]
+        },
+        "samui": {
+          "title": "Самуи",
+          "hotels": [
+            "Four Seasons Koh Samui",
+            "W Koh Samui",
+            "Banyan Tree Samui",
+            "Six Senses Samui"
+          ]
+        },
+        "khaolak": {
+          "title": "Као-Лак",
+          "hotels": [
+            "JW Marriott Khao Lak",
+            "The Sands Khao Lak",
+            "Avani+ Khao Lak"
+          ]
+        }
+      }
+    },
+    "vietnam": {
+      "title": "Вьетнам",
+      "summary": "Фукуок, Нячанг и Камрань — комфортные курорты, виллы и хорошая инфраструктура.",
+      "regions": {
+        "phuquoc": {
+          "title": "Фукуок",
+          "hotels": [
+            "InterContinental Phu Quoc",
+            "JW Marriott Phu Quoc",
+            "New World Phu Quoc",
+            "Premier Village Phu Quoc",
+            "Vinpearl Resort & Spa Phu Quoc"
+          ]
+        },
+        "nhatrang": {
+          "title": "Нячанг",
+          "hotels": [
+            "InterContinental Nha Trang",
+            "Amiana Resort Nha Trang",
+            "Vinpearl Resort Nha Trang"
+          ]
+        },
+        "camranh": {
+          "title": "Камрань",
+          "hotels": [
+            "Mövenpick Resort Cam Ranh",
+            "Alma Resort Cam Ranh",
+            "Radisson Blu Resort Cam Ranh"
+          ]
+        }
+      }
+    },
+    "uae": {
+      "title": "ОАЭ",
+      "summary": "Дубай, Абу-Даби и Рас-эль-Хайма — премиальный сервис, пляжи, шопинг и отели высокого уровня.",
+      "regions": {
+        "dubai": {
+          "title": "Дубай",
+          "hotels": [
+            "Atlantis The Royal",
+            "Jumeirah Al Naseem",
+            "One&Only The Palm",
+            "Bulgari Resort Dubai"
+          ]
+        },
+        "abudhabi": {
+          "title": "Абу-Даби",
+          "hotels": [
+            "Emirates Palace Mandarin Oriental",
+            "The St. Regis Saadiyat Island",
+            "Jumeirah Saadiyat Island"
+          ]
+        },
+        "rak": {
+          "title": "Рас-эль-Хайма",
+          "hotels": [
+            "Waldorf Astoria Ras Al Khaimah",
+            "Rixos Bab Al Bahr",
+            "The Ritz-Carlton Al Wadi Desert"
+          ]
+        }
+      }
+    }
+  }
+}

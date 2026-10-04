@@ -1,0 +1,209 @@
+.country-page--turkey [data-turkey-decor-section] {
+  position: relative;
+  isolation: isolate;
+}
+
+.country-page--turkey {
+  overflow-x: clip;
+}
+
+.country-page--turkey .country-section[data-turkey-decor-section] > :not(.turkey-section-decor),
+.country-page--turkey .country-hotels-cta[data-turkey-decor-section] > :not(.turkey-section-decor),
+.country-page--turkey .country-hero[data-turkey-decor-section] > .country-hero__content {
+  position: relative;
+  z-index: 1;
+}
+
+.country-page--turkey .country-hero[data-turkey-decor-section] > img {
+  position: absolute;
+  inset: 0 !important;
+  display: block;
+  width: 100% !important;
+  max-width: none;
+  height: 100% !important;
+  max-height: none;
+  object-fit: cover !important;
+  object-position: center;
+  border-radius: 0;
+  z-index: 0;
+}
+
+.country-page--turkey .country-hero[data-turkey-decor-section]::after {
+  z-index: 1;
+}
+
+.country-page--turkey .country-hero[data-turkey-decor-section] > .country-hero__content {
+  z-index: 3;
+}
+
+.turkey-section-decor {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+  will-change: transform;
+}
+
+.turkey-section-decor img {
+  position: static;
+  inset: auto;
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.turkey-section-decor--hero {
+  width: clamp(260px, 28vw, 440px);
+  right: -10%;
+  bottom: -23%;
+  z-index: 2;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.turkey-live-compass {
+  position: absolute;
+  top: 23%;
+  left: 16.5%;
+  width: 67%;
+  height: 43%;
+  overflow: hidden;
+  border: 1px solid rgba(49,60,58,.8);
+  border-radius: 50%;
+  background:
+    radial-gradient(ellipse at center, rgba(245,235,195,.98) 0 12%, transparent 12.4%),
+    repeating-conic-gradient(from 0deg, rgba(29,48,54,.78) 0deg 1deg, transparent 1deg 15deg),
+    radial-gradient(ellipse at center, #d4dfd8 0%, #a5bdc0 60%, #718d90 100%);
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.turkey-live-compass__face {
+  position: absolute;
+  inset: 11%;
+  border: 1px solid rgba(33,56,63,.72);
+  border-radius: 50%;
+  background:
+    linear-gradient(45deg, transparent 49.4%, rgba(28,50,57,.5) 49.7% 50.3%, transparent 50.6%),
+    linear-gradient(-45deg, transparent 49.4%, rgba(28,50,57,.5) 49.7% 50.3%, transparent 50.6%);
+}
+
+.turkey-live-compass__needle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 31%;
+  aspect-ratio: 96 / 258;
+  transform: translate(-50%, -50%) rotate(-42deg);
+  transform-origin: 50% 50%;
+  will-change: transform;
+  pointer-events: none;
+}
+
+.turkey-live-compass__needle img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.turkey-live-compass__hub {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  width: 18px;
+  height: 18px;
+  transform: translate(-50%, -50%);
+  border: 3px solid #f2d99a;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #fff0bc 0 12%, #b87b2e 42%, #664217 100%);
+  box-shadow: 0 1px 2px rgba(6,18,32,.35);
+}
+
+.turkey-section-decor--intro {
+  top: 19%;
+  right: -20%;
+  width: clamp(165px, 15vw, 235px);
+}
+
+.turkey-section-decor--resorts {
+  top: 28%;
+  left: 1%;
+  width: clamp(105px, 10vw, 180px);
+}
+
+.turkey-section-decor--sights {
+  top: 13%;
+  right: -1%;
+  width: clamp(105px, 9vw, 150px);
+}
+
+.turkey-section-decor--season {
+  top: 20%;
+  right: -14%;
+  width: clamp(130px, 11vw, 180px);
+}
+
+.turkey-section-decor--guide {
+  top: 22%;
+  right: -12%;
+  width: clamp(135px, 11vw, 190px);
+}
+
+.turkey-section-decor--notes {
+  top: clamp(430px, 30vw, 520px);
+  left: 9%;
+  width: clamp(105px, 9vw, 145px);
+}
+
+.turkey-section-decor--cta {
+  top: -126px;
+  right: 8%;
+  width: clamp(110px, 9vw, 150px);
+}
+
+.country-page--turkey .country-intro,
+.country-page--turkey .country-intro .country-section__head,
+.country-page--turkey .country-intro .country-text-block {
+  max-width: 760px;
+}
+
+.country-page--turkey .country-resort-list,
+.country-page--turkey .country-sight-grid {
+  max-width: 1100px;
+  margin-inline: auto;
+}
+
+@media (max-width: 900px) {
+  .turkey-section-decor--hero { right: -18%; }
+  .turkey-live-compass__needle { width: 29%; }
+  .turkey-live-compass__hub { width: 12px; height: 12px; }
+  .turkey-section-decor--intro { right: -10%; width: clamp(150px, 18vw, 205px); }
+  .turkey-section-decor--resorts { left: 1%; width: clamp(100px, 12vw, 145px); }
+  .turkey-section-decor--sights { right: -1%; width: clamp(95px, 11vw, 130px); }
+  .turkey-section-decor--season { right: -9%; width: clamp(115px, 12vw, 150px); }
+  .turkey-section-decor--guide { right: -8%; width: clamp(115px, 12vw, 155px); }
+  .turkey-section-decor--notes { top: 360px; left: 8%; width: clamp(90px, 10vw, 120px); }
+  .turkey-section-decor--cta { top: -104px; right: 7%; width: clamp(95px, 10vw, 125px); }
+}
+
+@media (max-width: 560px) {
+  .turkey-section-decor--hero { width: 220px; right: -24%; bottom: -16%; }
+  .turkey-live-compass__needle { width: 27%; }
+  .turkey-live-compass__hub { width: 9px; height: 9px; border-width: 1px; }
+  .turkey-section-decor--intro,
+  .turkey-section-decor--resorts,
+  .turkey-section-decor--sights,
+  .turkey-section-decor--season,
+  .turkey-section-decor--guide,
+  .turkey-section-decor--notes,
+  .turkey-section-decor--cta {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .turkey-section-decor { transform: none !important; }
+}

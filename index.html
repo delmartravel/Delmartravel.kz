@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob:; media-src 'self'; connect-src 'self'; form-action 'self'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Del Mar Travel — премиальные путешествия</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <section class="hero">
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="assets/videos/hero.mp4" type="video/mp4">
+    </video>
+
+    <header class="header">
+      <div class="logo-orb"><img src="assets/logos/logo.jpg" alt="Del Mar Travel"></div>
+
+      <div class="header-glass">
+        <div class="logo"><span class="logo-white">Del Mar</span>
+          <span class="logo-white">Travel</span></div>
+
+        <nav class="menu">
+          <a href="./index.html">Главная</a>
+        <a href="#formats">Форматы</a>
+          <a href="#why-us">Почему мы</a>
+          <div class="menu-destinations">
+            <a href="#formats" class="menu-destinations__toggle">Направления</a>
+            <div class="menu-destinations__list" aria-label="Страны">
+              <a href="./pages/turkey/index.html">Турция</a>
+              <a href="./pages/egypt/index.html">Египет</a>
+              <a href="./pages/uae/index.html">ОАЭ</a>
+              <a href="./pages/maldives/index.html">Мальдивы</a>
+              <a href="./pages/thailand/index.html">Таиланд</a>
+              <a href="./pages/vietnam/index.html">Вьетнам</a>
+              <a href="./pages/sri-lanka/index.html">Шри-Ланка</a>
+              <a href="./pages/qatar/index.html">Катар</a>
+              <a href="./pages/china/index.html">Китай</a>
+              <a href="./pages/georgia/index.html">Грузия</a>
+            </div>
+          </div>
+          <a href="./pages/search/index.html">Поиск тура</a>
+          <a href="#contacts">Контакты</a>
+        </nav>
+
+        <div class="header-actions">
+          <div class="lang-switch">
+            <a href="#" class="active">RU</a>
+            <a href="#">KZ</a>
+            <a href="#">EN</a>
+          </div>
+
+          <a href="https://wa.me/77770316653" target="_blank" rel="noopener noreferrer" class="header-button">
+            <svg class="wa-svg" viewBox="0 0 32 32" aria-hidden="true">
+              <path fill="currentColor" d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.8 2 6.8L3.7 29l6.6-1.7c1.8 1 3.8 1.5 5.9 1.5 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.6c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.9 1 1-3.8-.2-.4c-1-1.7-1.5-3.7-1.5-5.7C6 10.2 10.5 5.7 16 5.7s10 4.5 10 10-4.5 10.9-10 10.9z"/>
+            </svg>
+            WhatsApp
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <div class="hero-content">
+      <p class="eyebrow">Индивидуальный подбор путешествий</p>
+      <h1>Путешествия,<br>которые остаются<br>в памяти.</h1>
+      <p class="hero-text">Подберём отдых под ваш стиль жизни: от премиальных курортов и вилл до семейных путешествий и индивидуальных маршрутов.</p>
+
+      <div class="hero-actions">
+        <a href="https://wa.me/77770316653" target="_blank" rel="noopener noreferrer" class="button button-light">Получить подборку</a>
+        <a href="https://wa.me/77770316653" target="_blank" rel="noopener noreferrer" class="button button-outline">
+          <svg class="wa-svg" viewBox="0 0 32 32" aria-hidden="true">
+            <path fill="currentColor" d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.8 2 6.8L3.7 29l6.6-1.7c1.8 1 3.8 1.5 5.9 1.5 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.6c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.9 1 1-3.8-.2-.4c-1-1.7-1.5-3.7-1.5-5.7C6 10.2 10.5 5.7 16 5.7s10 4.5 10 10-4.5 10.9-10 10.9z"/>
+          </svg>
+          Написать в WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-stats liquid-glass">
+      <div><span class="stat-icon">✈</span><strong>30+</strong><p>стран для отдыха</p></div>
+      <div><span class="stat-icon">◇</span><strong>15+</strong><p>лет опыта</p></div>
+      <div><span class="stat-icon">▢</span><strong>10000+</strong><p>организованных поездок</p></div>
+    </div>
+  </section>
+
+  <section id="formats" class="travel-moods">
+    <div class="section-head">
+      <p class="section-label">Направления</p>
+      <h2>Направления</h2>
+      <p>Изучите страны, лучшие курорты и особенности отдыха, чтобы выбрать путешествие, которое подходит именно вам.</p>
+    </div>
+
+    <div class="mood-grid">
+      <a class="mood-card" href="./pages/turkey/index.html">
+        <img src="./assets/images/directions/turkey.jpg" alt="Турция">
+        <div>
+          <h3>Турция</h3>
+          <p>Анталия • Белек</p>
+        </div>
+      </a>
+
+      <a class="mood-card" href="./pages/egypt/index.html">
+        <img src="./assets/images/directions/egypt.jpg" alt="Египет">
+        <div>
+          <h3>Египет</h3>
+          <p>Шарм-эль-Шейх • Хургада</p>
+        </div>
+      </a>
+
+      <a class="mood-card" href="./pages/uae/index.html">
+        <img src="./assets/images/directions/uae.jpg" alt="ОАЭ">
+        <div>
+          <h3>ОАЭ</h3>
+          <p>Дубай • Абу-Даби</p>
+        </div>
+      </a>
+
+      <a class="mood-card" href="./pages/maldives/index.html">
+        <img src="./assets/images/directions/maldives.jpg" alt="Мальдивы">
+        <div>
+          <h3>Мальдивы</h3>
+          <p>Северный Мале • Ари</p>
+        </div>
+      </a>
+
+      <a class="mood-card" href="./pages/sri-lanka/index.html">
+        <img src="./assets/images/directions/sri-lanka.jpg" alt="Шри-Ланка">
+        <div>
+          <h3>Шри-Ланка</h3>
+          <p>Бентота • Унаватуна</p>
+        </div>
+      </a>
+
+      <a class="mood-card" href="./pages/thailand/index.html">
+        <img src="./assets/images/directions/thailand.jpg" alt="Таиланд">
+        <div>
+          <h3>Таиланд</h3>
+          <p>Пхукет • Самуи</p>
+        </div>
+      </a>
+
+      <a class="mood-card" href="./pages/vietnam/index.html">
+        <img src="./assets/images/directions/vietnam.jpg" alt="Вьетнам">
+        <div>
+          <h3>Вьетнам</h3>
+          <p>Фукуок • Нячанг</p>
+        </div>
+      </a>
+
+      <a class="mood-card" href="./pages/china/index.html">
+        <img src="./assets/images/directions/china.jpg" alt="Китай">
+        <div>
+          <h3>Китай</h3>
+          <p>Хайнань • Санья</p>
+        </div>
+      </a>
+
+      <a class="mood-card" href="./pages/qatar/index.html">
+        <img src="./assets/images/directions/qatar.jpg" alt="Катар">
+        <div>
+          <h3>Катар</h3>
+          <p>Доха • Лусаил</p>
+        </div>
+      </a>
+
+      <a class="mood-card" href="./pages/georgia/index.html">
+        <img src="./assets/images/directions/georgia.jpg" alt="Грузия">
+        <div>
+          <h3>Грузия</h3>
+          <p>Тбилиси • Батуми</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section id="why-us" class="why-us">
+    <div class="why-left">
+      <p class="section-label">Почему Del Mar Travel</p>
+      <h2>Берём на себя всё, чтобы отдых начался спокойно</h2>
+      <p>Мы внимательно разбираем ваш запрос и предлагаем только те варианты, которые действительно подходят по уровню, бюджету и стилю отдыха.</p>
+    </div>
+
+    <div class="why-grid">
+      <article class="why-card"><span>01</span><div class="why-icon">✦</div><h3>Индивидуальный подбор</h3><p>Не даём случайные варианты. Подбираем тур под даты, бюджет, состав туристов и ваши реальные пожелания.</p></article>
+      <article class="why-card"><span>02</span><div class="why-icon">★</div><h3>Проверенные отели</h3><p>Объясняем плюсы и минусы отелей честно, чтобы вы понимали, за что платите.</p></article>
+      <article class="why-card"><span>03</span><div class="why-icon">↗</div><h3>Сопровождение</h3><p>Остаёмся на связи до вылета, во время отдыха и до вашего возвращения домой.</p></article>
+      <article class="why-card"><span>04</span><div class="why-icon">✓</div><h3>Честные рекомендации</h3><p>Если отель не подходит под ваш запрос — скажем прямо и предложим более удачную альтернативу.</p></article>
+    </div>
+  </section>
+
+  <section id="process" class="process-section">
+    <div class="section-head">
+      <p class="section-label">Как мы работаем</p>
+      <h2>От заявки до отдыха — спокойно и понятно</h2>
+    </div>
+    <div class="process-grid">
+      <article><span>01</span><h3>Заявка</h3><p>Вы пишете даты, состав туристов, бюджет и пожелания.</p></article>
+      <article><span>02</span><h3>Подбор</h3><p>Мы готовим точные варианты с объяснением плюсов и нюансов.</p></article>
+      <article><span>03</span><h3>Бронирование</h3><p>Согласуем детали, оформляем тур и документы.</p></article>
+      <article><span>04</span><h3>Сопровождение</h3><p>Остаёмся на связи до возвращения домой.</p></article>
+    </div>
+  </section>
+
+  <section id="reviews" class="reviews-section">
+    <div class="section-head">
+      <p class="section-label">Отзывы</p>
+      <h2>Отзывы клиентов</h2>
+      <p>Позже добавим реальные отзывы, фото и истории поездок.</p>
+    </div>
+    <div class="review-grid">
+      <article><p>“Здесь будет отзыв клиента после загрузки материалов.”</p><strong>Клиент Del Mar Travel</strong></article>
+      <article><p>“Здесь будет отзыв клиента после загрузки материалов.”</p><strong>Клиент Del Mar Travel</strong></article>
+      <article><p>“Здесь будет отзыв клиента после загрузки материалов.”</p><strong>Клиент Del Mar Travel</strong></article>
+    </div>
+  </section>
+
+  <section id="contacts" class="final-cta">
+    <h2>Не знаете, куда отправиться?</h2>
+    <p>Напишите нам — подберём несколько вариантов под ваши даты, бюджет и стиль отдыха.</p>
+    <a href="https://wa.me/77770316653" target="_blank" rel="noopener noreferrer" class="button button-outline">Написать в WhatsApp</a>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <h3>Del Mar Travel</h3>
+        <p>Премиальный подбор путешествий, отелей и индивидуальных маршрутов по всему миру.</p>
+        <div class="footer-socials">
+          <a href="https://www.instagram.com/delmar_kz" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="https://www.tiktok.com/@delmar_kz" target="_blank" rel="noopener noreferrer">TikTok</a>
+          <a href="https://t.me/+77077186699" target="_blank" rel="noopener noreferrer">Telegram</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Связь</h4>
+        <a href="https://wa.me/77770316653" target="_blank" rel="noopener noreferrer">WhatsApp: +7 777 031 66 53</a>
+        <a href="tel:+77770316653">+7 777 031 66 53</a>
+        <a href="tel:+77077186699">+7 707 718 66 99</a>
+        <a href="tel:+77715610980">+7 771 561 09 80</a>
+        <a href="mailto:delmartravel888@gmail.com">delmartravel888@gmail.com</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Соцсети</h4>
+        <a href="https://www.instagram.com/delmar_kz" target="_blank" rel="noopener noreferrer">Instagram: delmar_kz</a>
+        <a href="https://www.tiktok.com/@delmar_kz" target="_blank" rel="noopener noreferrer">TikTok: delmar_kz</a>
+        <a href="https://t.me/+77077186699" target="_blank" rel="noopener noreferrer">Telegram: +7 707 718 66 99</a>
+      </div>
+
+      <div class="footer-col footer-requisites">
+        <h4>Реквизиты</h4>
+        <p>ТОО «DEL MAR TRAVEL»</p>
+        <p>БИН: 220740028941</p>
+        <p>АО «Kaspi Bank»</p>
+        <p>ИИК: KZ43722S000018027876 KZT</p>
+        <p>БИК: CASPKZKA</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>РК, Астана, проспект Кабанбай Батыра, д.13, ВП 28</p>
+      <p>© Del Mar Travel</p>
+    </div>
+  </footer>
+
+  <script src="animations.js"></script>
+</body>
+</html>

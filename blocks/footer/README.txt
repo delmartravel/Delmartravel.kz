@@ -1,0 +1,1 @@
+Футер: реквизиты, контакты, Instagram, TikTok, Telegram.

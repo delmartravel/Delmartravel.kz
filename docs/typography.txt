@@ -1,0 +1,7 @@
+TYPOGRAPHY
+
+Font: Manrope
+Hero h1: 74px desktop
+Section h2: 58px desktop
+Cards h3: 29px
+Body text: 17-23px

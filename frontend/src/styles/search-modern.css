@@ -1,0 +1,1664 @@
+/* Del Mar search visual layer. Existing form structure and client logic are unchanged. */
+.search-page-body {
+  --search-bg: #eef1ed;
+  --search-shell: #e3e9e5;
+  --search-panel: #f7f9f6;
+  --search-ink: #07141d;
+  --search-muted: #66736f;
+  --search-line: rgba(7, 20, 29, .12);
+  --search-line-strong: rgba(7, 20, 29, .2);
+  --search-brand: #0b7467;
+  --search-brand-dark: #085b52;
+  --search-gold: #c79b4b;
+  --search-skeleton: #e2e9e5;
+  background: var(--search-bg);
+  color: var(--search-ink);
+}
+
+.search-page-body .search-page {
+  padding: 34px var(--page-x) clamp(104px, 10vw, 154px);
+}
+
+.search-page-body .search-intro {
+  width: min(1280px, 100%);
+  padding: clamp(58px, 6vw, 88px) 0;
+}
+
+.search-page-body .search-intro__copy {
+  max-width: 960px;
+}
+
+.search-page-body .search-intro h1 {
+  color: var(--search-ink);
+  font-family: var(--serif);
+  font-size: clamp(56px, 6vw, 88px) !important;
+  font-weight: 500 !important;
+  line-height: .96 !important;
+  letter-spacing: 0 !important;
+}
+
+.search-page-body .tour-search-form {
+  --tour-search-border: var(--search-line);
+  --tour-search-muted: var(--search-muted);
+  --tour-search-surface: var(--search-shell);
+  --tour-search-green: var(--search-brand-dark);
+  --tour-search-accent: var(--search-brand);
+  margin-top: clamp(34px, 4vw, 52px);
+  border: 1px solid var(--search-line);
+  border-radius: 8px;
+  background: var(--search-shell);
+  box-shadow: 0 20px 58px rgba(7, 20, 29, .075);
+  color: var(--search-ink);
+}
+
+.search-page-body .tour-search-mode {
+  min-height: 72px;
+  padding: 20px 24px 14px;
+  gap: 8px;
+  border-bottom: 0;
+  background: transparent;
+  color: var(--search-ink);
+}
+
+.search-page-body .tour-search-mode__option {
+  min-height: 38px;
+  padding: 0 15px;
+  border: 1px solid var(--search-line);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--search-panel) 74%, transparent);
+  color: var(--search-muted);
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.search-page-body .tour-search-mode__option:has(input:checked) {
+  border-color: var(--search-brand-dark);
+  background: var(--search-brand-dark);
+  color: #fff;
+}
+
+.search-page-body .tour-search-mode__option input {
+  width: 14px;
+  height: 14px;
+  accent-color: #fff;
+}
+
+.search-page-body .tour-search-primary {
+  padding: 0 24px 16px;
+  gap: 8px;
+  background: transparent;
+}
+
+.search-page-body .tour-search-field,
+.search-page-body .tour-search-field:first-child,
+.search-page-body .tour-search-field:last-child,
+.search-page-body .tour-search-select,
+.search-page-body .tour-search-check,
+.search-page-body .tour-search-list,
+.search-page-body .tour-search-hotels {
+  border: 1px solid var(--search-line);
+  border-radius: 8px;
+  background: var(--search-panel);
+  color: var(--search-ink);
+  box-shadow: none;
+}
+
+.search-page-body .tour-search-field {
+  min-height: 78px;
+  padding: 14px 16px;
+}
+
+.search-page-body .tour-search-field > span,
+.search-page-body .tour-search-select > span,
+.search-page-body .tour-search-budget__input > span,
+.search-page-body .tour-search-budget__currency legend {
+  color: color-mix(in srgb, var(--search-ink) 48%, transparent);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .1em;
+}
+
+.search-page-body .tour-search-trigger,
+.search-page-body .tour-search-hotel-search input,
+.search-page-body .tour-search-budget__input input {
+  color: var(--search-ink);
+}
+
+.search-page-body .tour-search-trigger {
+  font-size: 14px;
+  font-weight: 650;
+  background-color: transparent !important;
+}
+
+.search-page-body .tour-search-star,
+.search-page-body .tour-search-hotel-search input {
+  background-color: transparent !important;
+}
+
+.search-page-body .tour-search-filters {
+  padding: 8px 24px 16px;
+  gap: 8px;
+}
+
+.search-page-body .tour-search-select {
+  min-height: 60px;
+  padding: 10px 14px;
+}
+
+.search-page-body .tour-search-stars {
+  gap: 1px;
+}
+
+.search-page-body .tour-search-star {
+  color: rgba(7, 20, 29, .18);
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.search-page-body .tour-search-stars[data-value="1"] .tour-search-star:nth-child(-n + 1),
+.search-page-body .tour-search-stars[data-value="2"] .tour-search-star:nth-child(-n + 2),
+.search-page-body .tour-search-stars[data-value="3"] .tour-search-star:nth-child(-n + 3),
+.search-page-body .tour-search-stars[data-value="4"] .tour-search-star:nth-child(-n + 4),
+.search-page-body .tour-search-stars[data-value="5"] .tour-search-star:nth-child(-n + 5),
+.search-page-body .tour-search-stars[data-hover="1"] .tour-search-star:nth-child(-n + 1),
+.search-page-body .tour-search-stars[data-hover="2"] .tour-search-star:nth-child(-n + 2),
+.search-page-body .tour-search-stars[data-hover="3"] .tour-search-star:nth-child(-n + 3),
+.search-page-body .tour-search-stars[data-hover="4"] .tour-search-star:nth-child(-n + 4),
+.search-page-body .tour-search-stars[data-hover="5"] .tour-search-star:nth-child(-n + 5) {
+  color: var(--search-gold) !important;
+}
+
+.dark .search-page-body .tour-search-star {
+  color: #f4f7f6;
+}
+
+.dark .search-page-body .tour-search-star span {
+  opacity: .22;
+}
+
+.dark .search-page-body .tour-search-stars[data-value="1"] .tour-search-star:nth-child(-n + 1) span,
+.dark .search-page-body .tour-search-stars[data-value="2"] .tour-search-star:nth-child(-n + 2) span,
+.dark .search-page-body .tour-search-stars[data-value="3"] .tour-search-star:nth-child(-n + 3) span,
+.dark .search-page-body .tour-search-stars[data-value="4"] .tour-search-star:nth-child(-n + 4) span,
+.dark .search-page-body .tour-search-stars[data-value="5"] .tour-search-star:nth-child(-n + 5) span,
+.dark .search-page-body .tour-search-stars[data-hover="1"] .tour-search-star:nth-child(-n + 1) span,
+.dark .search-page-body .tour-search-stars[data-hover="2"] .tour-search-star:nth-child(-n + 2) span,
+.dark .search-page-body .tour-search-stars[data-hover="3"] .tour-search-star:nth-child(-n + 3) span,
+.dark .search-page-body .tour-search-stars[data-hover="4"] .tour-search-star:nth-child(-n + 4) span,
+.dark .search-page-body .tour-search-stars[data-hover="5"] .tour-search-star:nth-child(-n + 5) span {
+  opacity: 1;
+}
+
+.search-page-body .tour-search-star:focus-visible {
+  border-radius: 5px;
+  outline: 1px solid color-mix(in srgb, var(--search-gold) 58%, transparent);
+  outline-offset: 0;
+}
+
+.search-page-body .tour-search-content {
+  padding: 4px 24px 16px;
+  gap: 10px;
+  grid-template-columns: minmax(240px, .68fr) minmax(0, 1.9fr);
+}
+
+.search-page-body .tour-search-list,
+.search-page-body .tour-search-hotels {
+  height: 250px;
+  padding: 16px;
+}
+
+.search-page-body .tour-search-list legend {
+  color: var(--search-ink);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .12em;
+}
+
+.search-page-body .tour-search-list__items::after,
+.search-page-body .tour-search-hotel-list::after {
+  background: transparent;
+}
+
+.search-page-body .tour-search-hotel-search {
+  min-height: 48px;
+  border-color: var(--search-line);
+  border-radius: 8px;
+}
+
+.search-page-body .tour-search-hotel-list {
+  border-color: var(--search-line);
+}
+
+.search-page-body .tour-search-bottom {
+  padding: 2px 24px 24px;
+  gap: 8px;
+}
+
+.search-page-body .tour-search-bottom .tour-search-select,
+.search-page-body .tour-search-bottom .tour-search-check,
+.search-page-body .tour-search-bottom .tour-search-submit {
+  min-height: 56px;
+  height: 56px;
+}
+
+.search-page-body .tour-search-check {
+  padding-inline: 14px;
+  color: var(--search-muted);
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.search-page-body .tour-search-check:has(input:checked) {
+  border-color: color-mix(in srgb, var(--search-brand) 36%, transparent);
+  background: color-mix(in srgb, var(--search-brand) 8%, var(--search-panel));
+  color: var(--search-brand-dark);
+}
+
+.search-page-body .tour-search-submit {
+  border-radius: 8px;
+  background: var(--search-brand);
+  box-shadow: none;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .search-page-body .tour-search-mode__option:hover {
+    border-color: color-mix(in srgb, var(--search-brand) 30%, transparent);
+    background: color-mix(in srgb, var(--search-brand) 7%, var(--search-panel));
+  }
+
+  .search-page-body .tour-search-mode__option:has(input:checked):hover {
+    border-color: var(--search-brand-dark);
+    background: var(--search-brand-dark);
+    color: #fff;
+  }
+
+  .search-page-body .tour-search-field:hover,
+  .search-page-body .tour-search-select:hover,
+  .search-page-body .tour-search-hotel-search:hover,
+  .search-page-body .tour-search-check:hover {
+    border-color: color-mix(in srgb, var(--search-brand) 34%, transparent);
+    box-shadow: none;
+  }
+
+  .search-page-body .tour-search-submit:hover {
+    background: var(--search-brand-dark);
+    box-shadow: 0 12px 28px rgba(11, 116, 103, .18);
+  }
+}
+
+.search-page-body .tour-search-popover,
+.search-page-body .tour-search-select-popover {
+  border: 1px solid var(--search-line-strong);
+  border-radius: 8px;
+  background: var(--search-panel);
+  color: var(--search-ink);
+  box-shadow: 0 24px 64px rgba(7, 20, 29, .16);
+  scrollbar-width: none;
+}
+
+.search-page-body .tour-search-popover::-webkit-scrollbar {
+  display: none;
+}
+
+.search-page-body .tour-search-calendar {
+  width: min(620px, calc(100vw - 64px));
+}
+
+.search-page-body .tour-search-calendar__grid {
+  gap: 14px;
+}
+
+.search-page-body .tour-search-weekdays,
+.search-page-body .tour-search-days {
+  gap: 4px;
+}
+
+.search-page-body .tour-search-date-btn {
+  aspect-ratio: 1;
+  border-radius: 6px;
+  font-size: 12px;
+  transition: none;
+}
+
+.search-page-body .tour-search-date-btn.is-selected,
+.search-page-body .tour-search-date-btn.is-range-edge,
+.search-page-body .tour-search-date-btn.is-selected:hover,
+.search-page-body .tour-search-date-btn.is-range-edge:hover {
+  background: var(--tour-search-accent);
+  color: #fff;
+  box-shadow: 0 5px 12px rgba(0, 128, 111, .16);
+}
+
+.search-page-body .tour-search-popover button,
+.search-page-body .tour-search-popover input,
+.search-page-body .tour-search-popover label,
+.search-page-body .tour-search-select-option,
+.search-page-body .tour-search-star {
+  touch-action: manipulation;
+  transition-duration: 0s !important;
+  transition-delay: 0s !important;
+}
+
+.search-page-body .tour-search-age-btn.is-selected,
+.search-page-body .tour-search-age-btn.is-selected:hover,
+.search-page-body .tour-search-select-option[aria-selected="true"],
+.search-page-body .tour-search-select-option[aria-selected="true"]:hover {
+  background: var(--tour-search-accent);
+  color: #fff;
+}
+
+.search-page-body .tour-search-star span,
+.search-page-body .tour-search-stars.is-filling .tour-search-star span,
+.search-page-body .tour-search-mode__option,
+.search-page-body .tour-search-mode__option span,
+.search-page-body .tour-search-check,
+.search-page-body .tour-search-check input,
+.search-page-body .tour-search-child-row,
+.search-page-body .tour-search-child-age-trigger,
+.search-page-body .tour-search-child-age-trigger::after,
+.search-page-body .tour-search-budget__radio,
+.search-page-body .tour-search-budget__radio span,
+.search-page-body .tour-search-budget__radio i {
+  animation: none !important;
+  transition-duration: 0s !important;
+  transition-delay: 0s !important;
+}
+
+.search-page-body .tour-search-calendar > .tour-search-popover__actions {
+  min-height: 54px;
+  margin-top: 6px;
+  padding-top: 6px;
+  padding-bottom: 10px;
+}
+
+.search-page-body .tour-search-popover.is-above {
+  top: calc(100% + 12px);
+  bottom: auto;
+  transform-origin: top center;
+}
+
+.search-page-body .tour-search-popover.tour-search-budget.is-above {
+  top: auto;
+  bottom: calc(100% + 12px);
+  transform-origin: bottom center;
+}
+
+.search-page-body .tour-search-popover.tour-search-budget > .tour-search-budget {
+  width: 100%;
+  min-width: 0;
+  padding: 0;
+  overflow: visible;
+}
+
+.search-page-body .tour-search-select-options {
+  min-height: 64px;
+  display: grid;
+  align-items: center;
+}
+
+.search-page-body .tour-search-select-option {
+  min-height: 42px;
+  border: 1px solid var(--search-line);
+  border-radius: 8px;
+  background: var(--search-shell);
+}
+
+.search-page-body .tour-search-select-option,
+.search-page-body .tour-search-date-btn,
+.search-page-body .tour-search-age-btn,
+.search-page-body .tour-search-child-age-trigger,
+.search-page-body .tour-search-stepper,
+.search-page-body .tour-search-secondary-btn {
+  color: var(--search-ink);
+}
+
+.search-page-body .tour-search-budget__input input {
+  border-color: var(--search-line);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--search-panel) 86%, var(--search-shell));
+}
+
+.search-page-body .tour-search-popover__actions {
+  border-color: var(--search-line);
+}
+
+.search-page-body .tour-search-apply-btn {
+  border-radius: 8px;
+  background: var(--search-brand);
+  color: #fff;
+}
+
+.search-page-body .tour-search-secondary-btn {
+  border-color: var(--search-line);
+  border-radius: 8px;
+  background: transparent;
+}
+
+.search-page-body .tour-search-departure-city__tab,
+.search-page-body .tour-search-departure-city__column,
+.search-page-body .tour-search-hotel-list,
+.search-page-body .tour-search-calendar__grid {
+  border-color: var(--search-line);
+}
+
+.search-page-body .tour-search-departure-city__tab {
+  background: var(--search-shell);
+}
+
+.search-page-body .tour-search-departure-city__column > i {
+  width: fit-content;
+  min-width: 22px;
+  height: 22px;
+  padding: 0 6px;
+  display: inline-grid;
+  place-items: center;
+  color: var(--search-brand);
+  font-style: normal;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.search-page-body .tour-search-departure-city__column > button {
+  min-height: 32px;
+  padding: 6px 8px;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  color: var(--search-ink);
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+}
+
+.search-page-body .tour-search-departure-city__column > button:hover,
+.search-page-body .tour-search-departure-city__column > button.is-highlighted {
+  background: color-mix(in srgb, var(--search-brand) 11%, transparent);
+  color: var(--search-brand);
+}
+
+.search-page-body .tour-search-list__items label,
+.search-page-body .tour-search-hotel-list label {
+  color: var(--search-muted);
+}
+
+.search-page-body .tour-search-list__items label:has(input:checked),
+.search-page-body .tour-search-hotel-list label:has(input:checked) {
+  color: var(--search-ink);
+}
+
+.search-page-body .tour-search-departure-city__item,
+.search-page-body .tour-search-counter,
+.search-page-body .tour-search-child-row {
+  color: var(--search-ink);
+}
+
+/* Results use the same calm surface hierarchy as the form. */
+.search-page-body .search-results-page {
+  width: min(1280px, 100%);
+  padding: clamp(56px, 6vw, 88px) 0;
+}
+
+.search-page-body .search-results-shell {
+  gap: 18px;
+}
+
+.search-page-body .search-results-panel,
+.search-page-body .search-results-sort,
+.search-page-body .search-results-filters,
+.search-page-body .search-results-list,
+.search-page-body .search-results-state,
+.search-page-body .search-result-card,
+.search-page-body .search-results-skeleton__item {
+  border-color: var(--search-line);
+  border-radius: 8px;
+  background: var(--search-panel);
+  color: var(--search-ink);
+  box-shadow: none;
+}
+
+.search-page-body .search-results-panel,
+.search-page-body .search-results-sort {
+  margin-bottom: 18px;
+}
+
+.search-page-body .search-results-filters {
+  background: color-mix(in srgb, var(--search-panel) 72%, var(--search-shell));
+}
+
+.search-page-body .search-result-card {
+  box-shadow: 0 12px 34px rgba(7, 20, 29, .05);
+}
+
+.search-page-body .search-result-card__media {
+  border-radius: 8px;
+  background: var(--search-shell);
+}
+
+.search-page-body .search-result-card__actions button,
+.search-page-body .search-result-card__details-actions button {
+  color: var(--search-brand-dark);
+  background: color-mix(in srgb, var(--search-brand) 9%, var(--search-panel));
+}
+
+.search-page-body .search-results-sort__summary,
+.search-page-body .search-results-sort__select,
+.search-page-body .search-results-sort__toggles div,
+.search-page-body .search-results-sort__map,
+.search-page-body .search-results-sort__edit,
+.search-page-body .search-results-skeleton__media,
+.search-page-body .search-results-skeleton__line,
+.search-page-body .search-results-skeleton__badges div,
+.search-page-body .search-results-skeleton__price,
+.search-page-body .search-results-skeleton__button {
+  background: linear-gradient(110deg, var(--search-skeleton) 8%, var(--search-panel) 22%, var(--search-skeleton) 36%);
+  background-size: 260% 100%;
+}
+
+.search-page-body .site-footer {
+  border-top: 1px solid rgba(255, 255, 255, .08);
+  background: #071726;
+}
+
+/* Dark mode: no white islands and no low-contrast labels. */
+.dark .search-page-body {
+  --search-bg: #061220;
+  --search-shell: #091923;
+  --search-panel: #0d202c;
+  --search-ink: #f4f7f6;
+  --search-muted: rgba(232, 239, 237, .66);
+  --search-line: rgba(255, 255, 255, .12);
+  --search-line-strong: rgba(255, 255, 255, .2);
+  --search-brand: #4caa99;
+  --search-brand-dark: #166f64;
+  --search-gold: #d9ad60;
+  --search-skeleton: #172d38;
+}
+
+.dark .search-page-body .tour-search-form,
+.dark .search-page-body .tour-search-field,
+.dark .search-page-body .tour-search-select,
+.dark .search-page-body .tour-search-check,
+.dark .search-page-body .tour-search-list,
+.dark .search-page-body .tour-search-hotels,
+.dark .search-page-body .tour-search-popover,
+.dark .search-page-body .tour-search-select-popover,
+.dark .search-page-body .search-results-panel,
+.dark .search-page-body .search-results-sort,
+.dark .search-page-body .search-results-filters,
+.dark .search-page-body .search-results-list,
+.dark .search-page-body .search-results-state,
+.dark .search-page-body .search-result-card,
+.dark .search-page-body .search-results-skeleton__item {
+  border-color: var(--search-line) !important;
+  background-color: var(--search-panel) !important;
+  color: var(--search-ink);
+}
+
+.dark .search-page-body .tour-search-form {
+  background-color: var(--search-shell) !important;
+}
+
+.dark .search-page-body .tour-search-trigger,
+.dark .search-page-body .tour-search-hotel-search input,
+.dark .search-page-body .tour-search-budget__input input,
+.dark .search-page-body .tour-search-select-option,
+.dark .search-page-body .tour-search-date-btn,
+.dark .search-page-body .tour-search-age-btn,
+.dark .search-page-body .tour-search-child-age-trigger,
+.dark .search-page-body .tour-search-stepper,
+.dark .search-page-body .tour-search-secondary-btn {
+  color: var(--search-ink);
+}
+
+/* Legacy chevrons are drawn with dark gradients, so give them a theme-aware ink. */
+.dark .search-page-body .tour-search-trigger {
+  background-image:
+    linear-gradient(45deg, transparent 50%, rgba(244, 247, 246, .78) 50%),
+    linear-gradient(135deg, rgba(244, 247, 246, .78) 50%, transparent 50%) !important;
+}
+
+.dark .search-page-body .tour-search-calendar__titles,
+.dark .search-page-body .tour-search-popover__title,
+.dark .search-page-body .tour-search-counter span,
+.dark .search-page-body .tour-search-child-row > span,
+.dark .search-page-body .tour-search-budget__clear,
+.dark .search-page-body .tour-search-budget__radio,
+.dark .search-page-body .tour-search-departure-city__item {
+  color: var(--search-ink);
+}
+
+.dark .search-page-body .tour-search-weekdays,
+.dark .search-page-body .tour-search-calendar__titles span,
+.dark .search-page-body .tour-search-budget__input > span,
+.dark .search-page-body .tour-search-budget__currency legend {
+  color: var(--search-muted);
+}
+
+.dark .search-page-body .tour-search-date-btn:disabled {
+  color: rgba(232, 239, 237, .24);
+}
+
+.dark .search-page-body .tour-search-date-btn.is-in-range {
+  color: #dff5ef;
+  background: rgba(76, 170, 153, .17);
+}
+
+.dark .search-page-body .tour-search-mode__option {
+  background: rgba(255, 255, 255, .035);
+  color: var(--search-muted);
+}
+
+.dark .search-page-body .tour-search-mode__option:has(input:checked) {
+  border-color: #4caa99;
+  background: #1a796d;
+  color: #fff;
+}
+
+.dark .search-page-body .tour-search-budget__input input,
+.dark .search-page-body .tour-search-hotel-search {
+  border-color: var(--search-line);
+  background: rgba(255, 255, 255, .025);
+}
+
+.dark .search-page-body .tour-search-popover__actions {
+  background: var(--search-panel);
+}
+
+.dark .search-page-body .tour-search-counter,
+.dark .search-page-body .tour-search-child-row,
+.dark .search-page-body .tour-search-child-age-picker {
+  border-color: var(--search-line);
+  background: rgba(255, 255, 255, .055);
+  box-shadow: none;
+}
+
+.dark .search-page-body .tour-search-counter span,
+.dark .search-page-body .tour-search-child-row > span {
+  color: var(--search-ink);
+}
+
+.dark .search-page-body .tour-search-stepper,
+.dark .search-page-body .tour-search-child-age-trigger,
+.dark .search-page-body .tour-search-age-btn,
+.dark .search-page-body .tour-search-icon-btn,
+.dark .search-page-body .tour-search-select-option {
+  border-color: var(--search-line);
+  background: rgba(255, 255, 255, .07);
+  color: var(--search-ink);
+}
+
+.dark .search-page-body .tour-search-stepper:not(:disabled):hover,
+.dark .search-page-body .tour-search-age-btn:hover,
+.dark .search-page-body .tour-search-age-btn.is-selected {
+  background: var(--search-brand);
+  color: #fff;
+}
+
+.dark .search-page-body .tour-search-icon-btn::before {
+  border-color: rgba(244, 247, 246, .78);
+}
+
+.dark .search-page-body .tour-search-child-age-trigger::after {
+  border-color: rgba(244, 247, 246, .72);
+}
+
+.dark .search-page-body .search-result-card__actions button,
+.dark .search-page-body .search-result-card__details-actions button {
+  color: #a3dfd2;
+  background: rgba(76, 170, 153, .1);
+}
+
+.dark .search-page-body .search-result-card__title,
+.dark .search-page-body .search-result-card__location,
+.dark .search-page-body .search-result-card__description div,
+.dark .search-page-body .search-result-card__old-price,
+.dark .search-page-body .search-result-card__price,
+.dark .search-page-body .search-result-card__details-grid > div > div {
+  background: rgba(244, 247, 246, .11);
+}
+
+.dark .search-page-body .search-result-card__rating,
+.dark .search-page-body .search-result-card__badge {
+  background: rgba(76, 170, 153, .2);
+}
+
+.dark .search-page-body .search-result-card__details {
+  border-top-color: rgba(255, 255, 255, .13);
+}
+
+.dark .search-page-body .search-result-card__details-grid span {
+  color: var(--search-muted);
+}
+
+.dark .search-page-body .search-result-card__actions button:disabled,
+.dark .search-page-body .search-result-card__details-actions button:disabled {
+  color: rgba(232, 239, 237, .42);
+  background: rgba(255, 255, 255, .045);
+  opacity: 1;
+}
+
+.dark .search-page-body .search-result-card__offer-button {
+  border: 0;
+  background: var(--search-brand) !important;
+}
+
+.dark .search-page-body .search-result-card__offer-button::before {
+  border-color: #fff;
+}
+
+/* Result overlays inherit the same dark surface system as the page. */
+.dark .search-page-body .search-reviews-modal__dialog {
+  border: 1px solid var(--search-line);
+  background: var(--search-panel);
+  background-image: none;
+  color: var(--search-ink);
+}
+
+.dark .search-page-body .search-reviews-modal__rating {
+  border-color: var(--search-line);
+  background: color-mix(in srgb, var(--search-gold) 8%, var(--search-panel));
+}
+
+.dark .search-page-body .search-reviews-modal__head,
+.dark .search-page-body .search-reviews-modal__item {
+  border-color: var(--search-line);
+}
+
+.dark .search-page-body .search-reviews-modal__close,
+.dark .search-page-body .search-reviews-modal__filters div {
+  border-color: var(--search-line);
+  background: rgba(255, 255, 255, .055);
+}
+
+.dark .search-page-body .search-reviews-modal__close::before,
+.dark .search-page-body .search-reviews-modal__close::after {
+  background: var(--search-ink);
+}
+
+.dark .search-page-body .search-reviews-modal__rating div,
+.dark .search-page-body .search-reviews-modal__rating span,
+.dark .search-page-body .search-reviews-modal__rating i,
+.dark .search-page-body .search-reviews-modal__title,
+.dark .search-page-body .search-reviews-modal__sources div,
+.dark .search-page-body .search-reviews-modal__mentions div,
+.dark .search-page-body .search-reviews-modal__review div {
+  background: rgba(244, 247, 246, .105);
+}
+
+.dark .search-page-body .search-reviews-modal__sources div:first-child,
+.dark .search-page-body .search-reviews-modal__score {
+  background: rgba(76, 170, 153, .2);
+}
+
+.dark .search-page-body .search-reviews-modal__rating-value {
+  background: rgba(217, 173, 96, .26);
+}
+
+.dark .search-page-body .search-reviews-modal__list {
+  scrollbar-color: rgba(255, 255, 255, .24) transparent;
+}
+
+.dark .search-page-body .search-reviews-modal__list::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, .24);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .dark .search-page-body .search-reviews-modal__item:hover,
+  .dark .search-page-body .search-reviews-modal__filters div:hover,
+  .dark .search-page-body .search-reviews-modal__mentions div:hover {
+    background-color: rgba(76, 170, 153, .1);
+    box-shadow: inset 0 0 0 1px rgba(76, 170, 153, .12);
+  }
+}
+
+.dark .search-page-body .search-hotel-modal {
+  color: var(--search-ink);
+  scrollbar-color: rgba(255, 255, 255, .24) transparent;
+}
+
+.dark .search-page-body .search-hotel-modal__dialog,
+.dark .search-page-body .search-hotel-modal__topbar,
+.dark .search-page-body .search-hotel-modal__tabs,
+.dark .search-page-body .search-hotel-modal__viewport,
+.dark .search-page-body .search-hotel-modal__api-panel,
+.dark .search-page-body .search-hotel-modal__content,
+.dark .search-page-body .search-hotel-rooms {
+  border-color: var(--search-line);
+  background: var(--search-panel);
+}
+
+.dark .search-page-body .search-hotel-modal__utility,
+.dark .search-page-body .search-hotel-modal__close,
+.dark .search-page-body .search-hotel-modal__tabs button,
+.dark .search-page-body .search-hotel-modal__fact i,
+.dark .search-page-body .search-hotel-modal__main-media,
+.dark .search-page-body .search-hotel-modal__rating-shell,
+.dark .search-page-body .search-hotel-modal__thumbs i,
+.dark .search-page-body .search-hotel-modal__gallery-action {
+  color: var(--search-muted);
+  background: rgba(255, 255, 255, .065);
+}
+
+.dark .search-page-body .search-hotel-modal__utility--more::before {
+  background: var(--search-muted);
+  box-shadow: 6px 0 var(--search-muted), 12px 0 var(--search-muted);
+}
+
+.dark .search-page-body .search-hotel-modal__utility--share::before,
+.dark .search-page-body .search-hotel-modal__utility--share::after {
+  border-color: var(--search-muted);
+}
+
+.dark .search-page-body .search-hotel-modal__close::before,
+.dark .search-page-body .search-hotel-modal__close::after {
+  background: var(--search-ink);
+}
+
+.dark .search-page-body .search-hotel-modal__brand-mark,
+.dark .search-page-body .search-hotel-modal__fact span,
+.dark .search-page-body .search-hotel-modal__price-head div,
+.dark .search-page-body .search-hotel-modal__price-note,
+.dark .search-page-body .search-hotel-modal__intro-lines i,
+.dark .search-page-body .search-hotel-modal__info-title,
+.dark .search-page-body .search-hotel-modal__info-value i,
+.dark .search-page-body .search-hotel-modal__rating-shell span {
+  background: rgba(244, 247, 246, .12);
+}
+
+.dark .search-page-body .search-hotel-modal__tour-card {
+  color: var(--search-ink);
+  background: var(--search-panel);
+}
+
+.dark .search-page-body .search-hotel-modal__price-panel {
+  border-color: var(--search-line);
+  background: var(--search-shell);
+}
+
+.dark .search-page-body .search-hotel-modal__price-head i,
+.dark .search-page-body .search-hotel-modal__price-action {
+  border-color: var(--search-line);
+  background: rgba(255, 255, 255, .07);
+}
+
+.dark .search-page-body .search-hotel-modal__price-action--accent {
+  background: var(--search-gold);
+}
+
+.dark .search-page-body .search-hotel-modal__tabs button.is-active {
+  color: #fff;
+  background: var(--search-brand-dark);
+}
+
+.dark .search-page-body .search-hotel-modal__information,
+.dark .search-page-body .search-hotel-modal__info-row {
+  border-color: var(--search-line);
+}
+
+.dark .search-page-body .site-footer {
+  background: #050f1a;
+}
+
+@media (max-width: 900px) {
+  .search-page-body .search-intro {
+    padding: 54px 0 78px;
+  }
+
+  .search-page-body .tour-search-primary,
+  .search-page-body .tour-search-filters {
+    gap: 8px;
+  }
+
+  .search-page-body .tour-search-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .search-page-body .search-intro,
+  .search-page-body .tour-search-primary,
+  .search-page-body .tour-search-filters,
+  .search-page-body .tour-search-bottom {
+    transform: none !important;
+  }
+
+  .search-page-body .search-page {
+    padding: 12px 14px 64px;
+  }
+
+  .search-page-body .search-intro {
+    padding: 44px 0 64px;
+  }
+
+  .search-page-body .search-intro h1 {
+    font-size: clamp(46px, 14vw, 60px) !important;
+  }
+
+  .search-page-body .tour-search-form {
+    margin-top: 28px;
+  }
+
+  .search-page-body .tour-search-mode {
+    padding: 16px 14px 12px;
+    overflow-x: auto;
+  }
+
+  .search-page-body .tour-search-mode__option {
+    flex: 0 0 auto;
+  }
+
+  .search-page-body .tour-search-primary,
+  .search-page-body .tour-search-filters,
+  .search-page-body .tour-search-content,
+  .search-page-body .tour-search-bottom {
+    padding-inline: 12px;
+  }
+
+  .search-page-body .tour-search-field {
+    min-height: 72px;
+  }
+
+  .search-page-body .tour-search-popover {
+    border-radius: 8px;
+  }
+
+  .search-page-body .tour-search-calendar {
+    width: auto;
+  }
+
+  .search-page-body .tour-search-calendar__grid .tour-search-month:nth-child(2) {
+    display: none;
+  }
+
+  .search-page-body .tour-search-popover__actions {
+    background: var(--search-panel);
+  }
+
+  .search-page-body .tour-search-list,
+  .search-page-body .tour-search-hotels {
+    height: 224px;
+  }
+}
+
+/* API-ready validation and result values. Legacy skeleton geometry is reset only
+   when actual Tourvisor values are present. */
+.search-page-body .tour-search-control.has-error {
+  border-color: #b6534a !important;
+  box-shadow: 0 0 0 3px rgba(182, 83, 74, .1) !important;
+}
+
+.search-page-body .tour-search-field-error {
+  position: absolute;
+  right: 14px;
+  bottom: 5px;
+  color: #9f4038;
+  font: 650 10px/1.1 var(--sans);
+  letter-spacing: 0;
+  pointer-events: none;
+}
+
+.search-page-body .tour-search-form-error,
+.search-page-body .tour-search-api-status {
+  margin: 0;
+  padding: 0 22px 10px;
+  color: #9f4038;
+  font: 650 12px/1.4 var(--sans);
+}
+
+.search-page-body .tour-search-api-status:empty {
+  display: none;
+}
+
+.search-page-body .search-result-card__media {
+  width: 100%;
+  border: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.search-page-body .search-result-card__media:disabled {
+  opacity: 1;
+}
+
+.search-page-body .search-result-card__stars {
+  width: auto;
+  height: auto;
+  min-height: 14px;
+  border-radius: 0;
+  background: none;
+  color: var(--search-gold);
+  font: 700 14px/1 var(--sans);
+  letter-spacing: .08em;
+}
+
+.search-page-body .search-result-card__title,
+.dark .search-page-body .search-result-card__title {
+  width: auto;
+  height: auto;
+  margin: 0;
+  border-radius: 0;
+  background: none !important;
+  color: var(--search-ink);
+  font: 700 clamp(18px, 1.55vw, 23px)/1.18 var(--sans);
+  letter-spacing: 0;
+}
+
+.search-page-body .search-result-card__location,
+.dark .search-page-body .search-result-card__location {
+  width: auto;
+  height: auto;
+  border-radius: 0;
+  background: none !important;
+  color: var(--search-muted);
+  font: 550 13px/1.4 var(--sans);
+}
+
+.search-page-body .search-result-card__rating,
+.dark .search-page-body .search-result-card__rating {
+  display: grid;
+  width: auto;
+  min-width: 44px;
+  height: 28px;
+  place-items: center;
+  padding: 0 10px;
+  color: var(--search-brand-dark);
+  font: 750 13px/1 var(--sans);
+}
+
+.search-page-body .search-result-card__description,
+.dark .search-page-body .search-result-card__description {
+  display: -webkit-box;
+  max-width: 68ch;
+  margin: 4px 0 0;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  background: none !important;
+  color: var(--search-muted);
+  font: 500 13px/1.55 var(--sans);
+}
+
+.search-page-body .search-result-card__offer-summary {
+  display: grid;
+  justify-items: end;
+  gap: 3px;
+  color: var(--search-muted);
+  font: 550 11px/1.35 var(--sans);
+  text-align: right;
+}
+
+.search-page-body .search-result-card__offer-summary span:empty {
+  display: none;
+}
+
+.search-page-body .search-result-card__price,
+.dark .search-page-body .search-result-card__price {
+  width: auto;
+  height: auto;
+  border-radius: 0;
+  background: none !important;
+  color: var(--search-ink);
+  font: 760 21px/1.1 var(--sans);
+  white-space: nowrap;
+}
+
+.search-page-body .search-result-card__details-grid p {
+  margin: 0;
+  color: var(--search-muted);
+  font: 500 13px/1.55 var(--sans);
+}
+
+.search-page-body .search-result-card__details-grid > div:has(p) {
+  align-items: start;
+}
+
+.search-page-body .search-result-card__actions button:disabled,
+.search-page-body .search-result-card__details-actions button:disabled,
+.search-page-body .search-result-card__offer-button:disabled {
+  cursor: not-allowed;
+  opacity: .45;
+}
+
+.search-page-body .search-results-state--error {
+  min-height: 160px;
+  display: grid;
+  place-items: center;
+  padding: 28px;
+  color: #9f4038;
+  font: 650 14px/1.5 var(--sans);
+  text-align: center;
+}
+
+.search-page-body .search-results-state--empty {
+  min-height: 220px;
+}
+
+.search-page-body .search-hotel-modal__hotel-name,
+.dark .search-page-body .search-hotel-modal__hotel-name {
+  width: auto;
+  height: auto;
+  margin: 0;
+  background: none !important;
+  color: inherit;
+}
+
+.search-page-body .search-hotel-modal__hotel-location,
+.dark .search-page-body .search-hotel-modal__hotel-location {
+  width: auto;
+  height: auto;
+  background: none !important;
+  color: var(--search-muted);
+}
+
+.search-page-body .search-hotel-modal__content p {
+  max-width: 78ch;
+  margin: 0;
+  color: var(--search-muted);
+  font: 500 15px/1.7 var(--sans);
+}
+
+.dark .search-page-body .tour-search-field-error,
+.dark .search-page-body .tour-search-form-error,
+.dark .search-page-body .tour-search-api-status,
+.dark .search-page-body .search-results-state--error {
+  color: #f0a098;
+}
+
+@media (max-width: 760px) {
+  .search-page-body .search-result-card__offer-summary {
+    justify-items: start;
+    text-align: left;
+  }
+}
+
+@media (max-width: 520px) {
+  .search-page-body .tour-search-field-error {
+    right: 12px;
+  }
+
+  .search-page-body .tour-search-form-error,
+  .search-page-body .tour-search-api-status {
+    padding-inline: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .search-page-body .tour-search-form,
+  .search-page-body .tour-search-field,
+  .search-page-body .tour-search-select,
+  .search-page-body .search-result-card {
+    transition: none;
+  }
+}
+
+/* Search console polish: a clearer hierarchy without changing form behavior. */
+.search-page-body {
+  --search-bg: #f0f1ec;
+  --search-shell: #e5ebe6;
+  --search-panel: #fbfcf9;
+  --search-hero: #103f39;
+  --search-hero-deep: #0a302c;
+  --search-focus: rgba(11, 116, 103, .22);
+}
+
+.search-page-body .search-page {
+  padding-top: 18px;
+}
+
+.search-page-body .search-intro {
+  padding: clamp(44px, 5vw, 70px) 0 clamp(82px, 8vw, 124px);
+}
+
+.search-page-body .search-intro__copy {
+  display: flex;
+  align-items: flex-end;
+  min-height: 104px;
+}
+
+.search-page-body .search-intro h1 {
+  position: relative;
+  font-size: clamp(58px, 5.4vw, 82px) !important;
+  line-height: .92 !important;
+  text-wrap: balance;
+}
+
+.search-page-body .search-intro h1::after {
+  position: absolute;
+  right: -64px;
+  bottom: .14em;
+  width: 42px;
+  height: 1px;
+  background: var(--search-gold);
+  content: "";
+}
+
+.search-page-body .tour-search-form {
+  margin-top: clamp(24px, 3vw, 38px);
+  border-color: rgba(7, 20, 29, .14);
+  border-radius: 20px;
+  background: var(--search-shell);
+  box-shadow:
+    0 30px 80px rgba(9, 40, 35, .11),
+    0 2px 10px rgba(9, 40, 35, .04);
+}
+
+.search-page-body .tour-search-mode {
+  min-height: 70px;
+  padding: 20px 22px 12px;
+  border-radius: 19px 19px 0 0;
+  background: var(--search-hero);
+}
+
+.search-page-body .tour-search-mode__option {
+  min-height: 38px;
+  border-color: rgba(255, 255, 255, .18);
+  background: rgba(255, 255, 255, .055);
+  color: rgba(255, 255, 255, .76);
+  backdrop-filter: none;
+}
+
+.search-page-body .tour-search-mode__option:has(input:checked) {
+  border-color: rgba(255, 255, 255, .92);
+  background: #f7f4eb;
+  color: var(--search-hero-deep);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, .1);
+}
+
+.search-page-body .tour-search-primary {
+  padding: 4px 22px 22px;
+  background: var(--search-hero);
+}
+
+.search-page-body .tour-search-primary .tour-search-field {
+  min-height: 84px;
+  border-color: rgba(255, 255, 255, .16);
+  border-radius: 12px;
+  background: rgba(251, 252, 249, .97);
+  box-shadow: 0 8px 24px rgba(1, 18, 15, .1);
+}
+
+.search-page-body .tour-search-filters {
+  padding: 20px 22px 14px;
+  gap: 10px;
+}
+
+.search-page-body .tour-search-select {
+  min-height: 66px;
+  padding: 11px 15px;
+  border-radius: 11px;
+}
+
+.search-page-body .tour-search-field > span,
+.search-page-body .tour-search-select > span,
+.search-page-body .tour-search-budget__input > span,
+.search-page-body .tour-search-budget__currency legend {
+  color: color-mix(in srgb, var(--search-ink) 52%, transparent);
+  font-size: 9px;
+  letter-spacing: .12em;
+}
+
+.search-page-body .tour-search-trigger {
+  min-height: 25px;
+  font-size: 14px;
+  font-weight: 680;
+}
+
+.search-page-body .tour-search-content {
+  padding: 6px 22px 18px;
+  gap: 12px;
+}
+
+.search-page-body .tour-search-list,
+.search-page-body .tour-search-hotels {
+  height: 264px;
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--search-panel) 92%, var(--search-shell));
+}
+
+.search-page-body .tour-search-list legend {
+  color: var(--search-brand-dark);
+  font-size: 10px;
+  letter-spacing: .14em;
+}
+
+.search-page-body .tour-search-hotel-search {
+  min-height: 52px;
+  border-radius: 10px;
+  background: var(--search-panel);
+}
+
+.search-page-body .tour-search-bottom {
+  padding: 0 22px 22px;
+  gap: 10px;
+}
+
+.search-page-body .tour-search-bottom .tour-search-select,
+.search-page-body .tour-search-bottom .tour-search-check,
+.search-page-body .tour-search-bottom .tour-search-submit {
+  min-height: 60px;
+  height: 60px;
+  border-radius: 11px;
+}
+
+.search-page-body .tour-search-check {
+  background: rgba(251, 252, 249, .76);
+}
+
+.search-page-body .tour-search-submit {
+  position: relative;
+  overflow: hidden;
+  background: var(--search-brand);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, .18),
+    0 12px 24px rgba(11, 116, 103, .16);
+  letter-spacing: .01em;
+}
+
+.search-page-body .tour-search-field,
+.search-page-body .tour-search-select,
+.search-page-body .tour-search-check,
+.search-page-body .tour-search-submit {
+  transition:
+    border-color 180ms ease,
+    background-color 180ms ease,
+    box-shadow 220ms ease,
+    transform 220ms cubic-bezier(.2, .7, .2, 1);
+}
+
+.search-page-body .tour-search-field.is-popover-active,
+.search-page-body .tour-search-select.is-popover-active,
+.search-page-body .tour-search-field:focus-within,
+.search-page-body .tour-search-select:focus-within {
+  border-color: color-mix(in srgb, var(--search-brand) 58%, transparent);
+  box-shadow: 0 0 0 3px var(--search-focus);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .search-page-body .tour-search-primary .tour-search-field:hover,
+  .search-page-body .tour-search-filters .tour-search-select:hover,
+  .search-page-body .tour-search-bottom .tour-search-select:hover,
+  .search-page-body .tour-search-bottom .tour-search-check:hover {
+    transform: translateY(-1px);
+    border-color: color-mix(in srgb, var(--search-brand) 38%, transparent);
+    box-shadow: 0 10px 26px rgba(7, 20, 29, .08);
+  }
+
+  .search-page-body .tour-search-mode__option:hover {
+    border-color: rgba(255, 255, 255, .4);
+    background: rgba(255, 255, 255, .09);
+    color: #fff;
+  }
+
+  .search-page-body .tour-search-mode__option:has(input:checked):hover {
+    border-color: #fff;
+    background: #fffdf7;
+    color: var(--search-hero-deep);
+  }
+
+  .search-page-body .tour-search-submit:hover {
+    transform: translateY(-1px);
+    box-shadow:
+      inset 0 0 0 1px rgba(255, 255, 255, .2),
+      0 16px 34px rgba(11, 116, 103, .24);
+  }
+}
+
+.dark .search-page-body {
+  --search-bg: #07131c;
+  --search-shell: #0a1d24;
+  --search-panel: #10272e;
+  --search-hero: #0a312f;
+  --search-hero-deep: #071f20;
+  --search-focus: rgba(76, 170, 153, .2);
+}
+
+.dark .search-page-body .tour-search-mode,
+.dark .search-page-body .tour-search-primary {
+  background: var(--search-hero) !important;
+}
+
+.dark .search-page-body .tour-search-mode__option {
+  border-color: rgba(255, 255, 255, .18) !important;
+  background: rgba(255, 255, 255, .05) !important;
+  color: rgba(255, 255, 255, .72);
+}
+
+.dark .search-page-body .tour-search-mode__option:has(input:checked) {
+  border-color: rgba(255, 255, 255, .86) !important;
+  background: #eef2eb !important;
+  color: #0a302c;
+}
+
+.dark .search-page-body .tour-search-primary .tour-search-field {
+  border-color: rgba(255, 255, 255, .12) !important;
+  background: #112c31 !important;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, .16);
+}
+
+.dark .search-page-body .tour-search-check {
+  background: rgba(255, 255, 255, .035) !important;
+}
+
+@media (max-width: 900px) {
+  .search-page-body .search-intro__copy {
+    min-height: 80px;
+  }
+
+  .search-page-body .tour-search-mode {
+    padding-inline: 18px;
+  }
+
+  .search-page-body .tour-search-primary,
+  .search-page-body .tour-search-filters,
+  .search-page-body .tour-search-content,
+  .search-page-body .tour-search-bottom {
+    padding-inline: 18px;
+  }
+}
+
+@media (max-width: 520px) {
+  .search-page-body .search-intro {
+    padding: 36px 0 62px;
+  }
+
+  .search-page-body .search-intro__copy {
+    min-height: 66px;
+  }
+
+  .search-page-body .search-intro h1::after {
+    display: none;
+  }
+
+  .search-page-body .tour-search-form {
+    border-radius: 16px;
+  }
+
+  .search-page-body .tour-search-mode {
+    border-radius: 15px 15px 0 0;
+  }
+
+  .search-page-body .tour-search-mode,
+  .search-page-body .tour-search-primary,
+  .search-page-body .tour-search-filters,
+  .search-page-body .tour-search-content,
+  .search-page-body .tour-search-bottom {
+    padding-inline: 12px;
+  }
+
+  .search-page-body .tour-search-primary .tour-search-field {
+    min-height: 76px;
+  }
+
+  .search-page-body .tour-search-list,
+  .search-page-body .tour-search-hotels {
+    height: 232px;
+  }
+}
+
+/* API-backed hotel card actions */
+body.is-hotel-modal-open,
+body.is-hotel-gallery-open {
+  overflow: hidden;
+}
+
+.search-page-body .search-result-card__details-loading,
+.search-page-body .search-hotel-modal__api-panel.is-loading {
+  min-height: 86px;
+  border-radius: 8px;
+  background: linear-gradient(110deg, var(--search-skeleton) 8%, var(--search-panel) 22%, var(--search-skeleton) 36%);
+  background-size: 260% 100%;
+  animation: searchSkeletonShimmer 1.35s linear infinite;
+}
+
+.search-page-body .search-result-card__details-loading {
+  width: min(620px, 100%);
+  margin: 0 auto 14px;
+}
+
+.search-page-body .search-hotel-room__media {
+  overflow: hidden;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.search-page-body .search-hotel-modal__info-row {
+  align-items: start;
+}
+
+.search-page-body .search-hotel-modal__info-row strong {
+  color: var(--search-ink);
+  font: 700 13px/1.5 var(--sans);
+}
+
+.search-page-body .search-hotel-modal__info-row p {
+  margin: 0;
+  color: var(--search-muted);
+  font: 500 14px/1.65 var(--sans);
+  white-space: pre-line;
+}
+
+.search-page-body .search-hotel-modal__api-panel.is-loading {
+  margin: clamp(26px, 4vw, 50px);
+}
+
+.search-page-body .search-hotel-modal__main-media.has-image {
+  width: 100%;
+  border: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+}
+
+.search-page-body .search-hotel-modal__thumbs button {
+  min-height: 66px;
+  padding: 0;
+  border: 0;
+  border-radius: 6px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+}
+
+.search-page-body .search-hotel-modal__gallery-side {
+  grid-template-rows: 1fr auto;
+}
+
+.search-page-body .search-hotel-map {
+  position: relative;
+  min-height: clamp(340px, 56vh, 620px);
+  border: 1px solid var(--search-line);
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background-color: var(--search-shell);
+  background-image:
+    linear-gradient(var(--search-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--search-line) 1px, transparent 1px);
+  background-size: 36px 36px;
+}
+
+.search-page-body .search-hotel-map i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 24px;
+  height: 24px;
+  border: 7px solid var(--search-brand);
+  border-radius: 50% 50% 50% 0;
+  transform: translate(-50%, -65%) rotate(-45deg);
+}
+
+.search-page-body .search-hotel-map span {
+  margin-top: 74px;
+  padding: 8px 13px;
+  border: 1px solid var(--search-line);
+  border-radius: 999px;
+  color: var(--search-muted);
+  background: var(--search-panel);
+  font: 650 12px/1 var(--sans);
+  font-variant-numeric: tabular-nums;
+}
+
+.search-page-body .search-hotel-gallery__stage {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.search-page-body .search-hotel-gallery__thumbs button {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.dark .search-page-body .search-hotel-modal__info-row strong,
+.dark .search-page-body .search-hotel-room__identity b,
+.dark .search-page-body .search-hotel-room__price b {
+  color: var(--search-ink);
+}
+
+.dark .search-page-body .search-hotel-room {
+  border-color: var(--search-line);
+  background: rgba(255, 255, 255, .045);
+}
+
+.dark .search-page-body .search-hotel-room.is-selected {
+  border-color: var(--search-brand);
+  background: rgba(76, 170, 153, .12);
+}
+
+.dark .search-page-body .search-hotel-room__media,
+.dark .search-page-body .search-hotel-room__select {
+  background-color: rgba(255, 255, 255, .08);
+}
+
+@media (max-width: 700px) {
+  .search-page-body .search-hotel-room {
+    grid-template-columns: 48px minmax(0, 1fr) 34px;
+    gap: 10px;
+  }
+
+  .search-page-body .search-hotel-room__price {
+    grid-column: 2;
+    justify-content: flex-start;
+  }
+
+  .search-page-body .search-hotel-room__select {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .search-page-body .search-result-card__details-loading,
+  .search-page-body .search-hotel-modal__api-panel.is-loading {
+    animation: none;
+  }
+}
